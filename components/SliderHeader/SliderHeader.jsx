@@ -38,7 +38,6 @@ export default function SliderHeader() {
     })
   }, [])
   const handleNextButtonClick = (e) => {
-    
     if (swiperRef.current) {
       swiperRef.current.slideNext() // Go to the next slide
     }

@@ -16,7 +16,7 @@ export default function OurStack() {
                 <div className="services-icon">
                   <i className="flaticon-project-management"></i>
                 </div>
-                <h3>IT Solution</h3>
+                <h3>Mobile App</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt dolore magna aliqua
@@ -50,7 +50,7 @@ export default function OurStack() {
                 <div className="services-icon">
                   <i className="flaticon-cpu-1"></i>
                 </div>
-                <h3>Networking Services</h3>
+                <h3>AI Models</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt dolore magna aliqua
@@ -67,7 +67,7 @@ export default function OurStack() {
                 <div className="services-icon">
                   <i className="flaticon-coding"></i>
                 </div>
-                <h3>SEO Optimization</h3>
+                <h3>DevOps</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt dolore magna aliqua
@@ -84,7 +84,7 @@ export default function OurStack() {
                 <div className="services-icon">
                   <i className="flaticon-mobile-app"></i>
                 </div>
-                <h3>App Optimization</h3>
+                <h3>Consulting</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt dolore magna aliqua
@@ -101,7 +101,7 @@ export default function OurStack() {
                 <div className="services-icon">
                   <i className="flaticon-cloud"></i>
                 </div>
-                <h3>Data Recovery</h3>
+                <h3>UI/UX</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt dolore magna aliqua

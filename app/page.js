@@ -20,25 +20,15 @@ export default function Home() {
     <>
       <Layout>
         <SliderHeader />
-        {/* second Part */}
         <AboutCompany />
-        {/* thirth part */}
         <OurStack />
-        {/* forth Part */}
-        <ChooseUs />
-        {/* fifth Part */}
-        <TrustUs />
-        {/* sixth Part */}
-        <Achievements />
-        {/* {sevnyh Part} */}
-        <ClientsSay />
-        {/* {eighth Part} */}
+        {/* <ChooseUs /> */}
+        {/* <TrustUs /> */}
+        {/* <Achievements /> */}
+        {/* <ClientsSay /> */}
         <TeamMembers />
-        {/* {Ninth Part} */}
-        <Blog />
-        {/* {Tenth Part} */}
-        <CooperationBlock />
-        {/* {eleventh Part} */}
+        {/* <Blog /> */}
+        {/* <CooperationBlock /> */}
         <OurCustomers />
       </Layout>
     </>

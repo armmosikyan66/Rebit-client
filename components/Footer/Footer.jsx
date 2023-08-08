@@ -4,26 +4,6 @@ export default function Footer() {
 
   return (
     <section className="footer-subscribe-wrapper">
-		<div className="subscribe-area">
-			<div className="container">
-				<div className="row align-items-center">
-					<div className="col-lg-6 col-md-6">
-						<div className="subscribe-content">
-							<h2>Sign Up Our Newsletter</h2>
-							<span className="sub-title">We Offer An Informative Monthly Technology Newsletter - Check It Out.</span>
-						</div>
-					</div>
-					<div className="col-lg-6 col-md-6">
-						<form className="newsletter-form">
-							<input type="email" className="input-newsletter" placeholder="Enter your email" name="EMAIL" required="" autocomplete="off" />
-							<button type="submit">Subscribe Now</button>
-							<div id="validator-newsletter" className="form-result"></div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<div className="footer-area ptb-100">
 			<div className="container">
 				<div className="row">

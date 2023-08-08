@@ -1,12 +1,40 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import Logo from '@/assets/img/logo.png'
 import LogoBlack from '@/assets/img/logo-black.png'
+import { useEffect, useState } from 'react'
 
+const useScrollSticky = () => {
+  const [isSticky, setIsSticky] = useState(false)
+
+  useEffect(() => {
+    // Function to handle the scroll event
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      // You can adjust the threshold value (e.g., 100) to change when the class is added
+      setIsSticky(scrollY > 89)
+    }
+
+    // Check if window is defined before adding the scroll event listener
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll)
+
+      // Remove the scroll event listener when the component unmounts
+      return () => {
+        window.removeEventListener('scroll', handleScroll)
+      }
+    }
+  }, [])
+
+  return isSticky
+}
 
 export default function Header() {
+  const isSticky = useScrollSticky()
   return (
-    <div className="navbar-area">
+    <div className={`navbar-area ${isSticky ? 'is-sticky' : ''}`}>
       <div className="techvio-responsive-nav">
         <div className="container">
           <div className="techvio-responsive-menu">

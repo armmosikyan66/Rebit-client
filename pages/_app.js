@@ -2,7 +2,7 @@
 import RootLayout from "@/app/layout";
 import { store } from "@/redux/store";
 import { Provider } from "react-redux";
-import '@/assets/css/animate.min.css'
+// import '@/assets/css/animate.min.css'
 import '@/assets/css/bootstrap.min.css'
 import '@/assets/css/flaticon.css'
 import '@/assets/css/fontawesome.min.css'
@@ -15,11 +15,11 @@ import '@/assets/css/style.css'
 import '@/assets/css/swiper.min.css'
 
 function MyApp({ Component, pageProps }) {
-    return (
-      <Provider store={store}>
-        <Component {...pageProps} />
-      </Provider>
-    );
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
 }
-  
+
 export default MyApp;

@@ -1,13 +1,11 @@
-import { PageTitle, Layout } from '@/components'
+import { PageTitle } from "@/components";
 
 function ItSchool() {
   return (
     <>
-      <Layout>
-        <PageTitle title={'It School'} />
-      </Layout>
+      <PageTitle title={"It School"} />
     </>
-  )
+  );
 }
 
-export default ItSchool
+export default ItSchool;

@@ -1,11 +1,9 @@
-import { PageTitle, Layout } from "@/components";
+import { PageTitle } from "@/components";
 
 function OurStartUps() {
   return (
     <>
-      <Layout>
-        <PageTitle title={"Our StartUps"} />
-      </Layout>
+      <PageTitle title={"Our StartUps"} />
     </>
   );
 }

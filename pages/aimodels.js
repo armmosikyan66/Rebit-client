@@ -1,11 +1,7 @@
-import { PageTitle, Layout } from "@/components"
+import { PageTitle } from "@/components";
 
 function AiModels() {
-  return (
-    <Layout>
-        <PageTitle title={"Ai Models"}/>
-    </Layout>
-  )
+  return <PageTitle title={"Ai Models"} />;
 }
 
-export default AiModels
+export default AiModels;

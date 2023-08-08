@@ -1,5 +1,5 @@
 import imgs from "@/assets/img/team/team-1.jpg";
-import { PageTitle, Layout } from "@/components";
+import { PageTitle } from "@/components";
 
 const teamMembers = [
   {
@@ -53,28 +53,26 @@ function TeamMember({ member }) {
 
 function Team() {
   return (
-    <Layout>
-      <>
-        <PageTitle title={"Team"} />
-        <section className="team-area section-padding">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-                <div className="section-title">
-                  <h6>Team Member</h6>
-                  <h2>Expert Team</h2>
-                </div>
+    <>
+      <PageTitle title={"Team"} />
+      <section className="team-area section-padding">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="section-title">
+                <h6>Team Member</h6>
+                <h2>Expert Team</h2>
               </div>
-              {teamMembers.map((member, index) => (
-                <div key={index} className="col-lg-3 col-md-6">
-                  <TeamMember member={member} />
-                </div>
-              ))}
             </div>
+            {teamMembers.map((member, index) => (
+              <div key={index} className="col-lg-3 col-md-6">
+                <TeamMember member={member} />
+              </div>
+            ))}
           </div>
-        </section>
-      </>
-    </Layout>
+        </div>
+      </section>
+    </>
   );
 }
 

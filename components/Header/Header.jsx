@@ -31,7 +31,10 @@ const useScrollSticky = () => {
   return isSticky
 }
 
-export default function Header() {
+export default function Header({ route }) {
+
+  console.log('route in header', route);
+
   const isSticky = useScrollSticky()
   return (
     <div className={`navbar-area ${isSticky ? 'is-sticky' : ''}`}>
@@ -71,19 +74,19 @@ export default function Header() {
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       {' '}
-                      <Link href="aboutus" className="nav-link">
+                      <Link href="/aboutus" className="nav-link">
                         About Us
                       </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="team" className="nav-link">
+                      <Link href="/team" className="nav-link">
                         Team
                       </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="careers" className="nav-link">
+                      <Link href="/careers" className="nav-link">
                         Careers
                       </Link>
                     </li>
@@ -91,43 +94,52 @@ export default function Header() {
                 </li>
                 <li className="nav-item">
                   {' '}
-                  <Link href="#" className="nav-link">
+                  {/* <Link href="#" className="nav-link">
+                    Services <i className="fas fa-chevron-down"></i>
+                  </Link> */}
+                  <Link href="/services" className="nav-link">
                     Services <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       {' '}
-                      <Link href="webdevelopment" className="nav-link">
+                      {/* <Link href={route === "/services" ? '' : '/services'} className="nav-link">
                         Web Development
-                      </Link>
+                      </Link> */}
+                      {route === '/services' ? 
+                        <a className='nav-link' onClick={(e) => e.preventDefault()} href="">Web Development</a>
+                          :
+                        <Link href={route === "/services" ? '' : '/services'} className="nav-link">
+                          Web Development
+                        </Link>}
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="mobile" className="nav-link">
+                      <Link href="/services" className="nav-link">
                         Mobile App
                       </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="aimodels" className="nav-link">
+                      <Link href="/services" className="nav-link">
                         AI Models
                       </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="devops" className="nav-link">
+                      <Link href="/services" className="nav-link">
                         DevOps
                       </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="consulting" className="nav-link">
+                      <Link href="/services" className="nav-link">
                         Consulting
                       </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="consulting" className="nav-link">
+                      <Link href="/services" className="nav-link">
                         UI/UX
                       </Link>
                     </li>
@@ -141,13 +153,13 @@ export default function Header() {
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       {' '}
-                      <Link href="ourprojects" className="nav-link">
+                      <Link href="/ourprojects" className="nav-link">
                         Our Projects
                       </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="ourstartups" className="nav-link">
+                      <Link href="/ourstartups" className="nav-link">
                         Our Startups
                       </Link>
                     </li>
@@ -155,19 +167,19 @@ export default function Header() {
                 </li>
                 <li className="nav-item">
                   {' '}
-                  <Link href="itschool" className="nav-link">
+                  <Link href="/itschool" className="nav-link">
                     IT School
                   </Link>
                 </li>
                 <li className="nav-item">
                   {' '}
-                  <Link href="ourclients" className="nav-link">
+                  <Link href="/ourclients" className="nav-link">
                     Our Clients
                   </Link>
                 </li>
                 <li className="nav-item">
                   {' '}
-                  <Link href="contact" className="nav-link">
+                  <Link href="/contact" className="nav-link">
                     Contact Us
                   </Link>
                 </li>

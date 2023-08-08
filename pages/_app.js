@@ -13,11 +13,14 @@ import '@/assets/css/owl.carousel.min.css'
 import '@/assets/css/responsive.css'
 import '@/assets/css/style.css'
 import '@/assets/css/swiper.min.css'
+import { Layout } from "@/components";
 
 function MyApp({ Component, pageProps }) {
     return (
       <Provider store={store}>
-        <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
       </Provider>
     );
 }

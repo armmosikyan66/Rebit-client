@@ -1,13 +1,11 @@
-import { Layout, PageTitle } from '@/components'
+import { PageTitle } from "@/components";
 
 function Contact() {
   return (
     <>
-      <Layout>
-        <PageTitle title={'Contact Us'} />
-      </Layout>
+      <PageTitle title={"Contact Us"} />
     </>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

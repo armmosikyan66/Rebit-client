@@ -4423,3 +4423,7 @@ blockquote::after, .blockquote::after {
 .copyright-area ul li:first-child {
 	margin-left: 0;
 }
+
+.web-dev, .mobile-app, .ai, .devops, .consulting, .uiux {
+	height: 400px;
+}

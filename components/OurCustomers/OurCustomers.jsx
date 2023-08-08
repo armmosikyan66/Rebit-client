@@ -10,6 +10,7 @@ import Client8 from '@/assets/img/partner/client-8.png';
 
 
 export default function OurCustomers() {
+
   return (
     <section className="partner-section pt-100 pb-70">
       <div className="container">

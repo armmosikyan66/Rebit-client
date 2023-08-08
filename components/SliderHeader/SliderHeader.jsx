@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default function SliderHeader() {
   return (
     <header class="slider slider-prlx">
@@ -6,7 +8,8 @@ export default function SliderHeader() {
             <div class="swiper-slide">
               <div
                 class="bg-img valign"
-                data-background="assets/img/slider-2.jpg"
+                // data-background="assets/img/slider-2.jpg"
+                data-background='../../assets/img/slider-2.jpg'
                 data-overlay-dark="5"
               >
                 <div class="container">
@@ -39,7 +42,8 @@ export default function SliderHeader() {
             <div class="swiper-slide">
               <div
                 class="bg-img valign"
-                data-background="assets/img/slider-2.jpg"
+                // data-background="assets/img/slider-2.jpg"
+                data-background='../../assets/img/slider-2.jpg'
                 data-overlay-dark="5"
               >
                 <div class="container">

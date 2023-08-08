@@ -125,6 +125,12 @@ export default function Header() {
                         Consulting
                       </Link>
                     </li>
+                    <li className="nav-item">
+                      {' '}
+                      <Link href="consulting" className="nav-link">
+                        UI/UX
+                      </Link>
+                    </li>
                   </ul>
                 </li>
                 <li className="nav-item">

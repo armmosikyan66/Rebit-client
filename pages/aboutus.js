@@ -18,10 +18,10 @@ function AboutUs() {
       <>
         <PageTitle title="About Us"/>
         <AboutCompany />
-        <Achievements />
+        {/* <Achievements /> */}
         <TeamMembers />
-        <ClientsSay />
-        <CooperationBlock />
+        {/* <ClientsSay /> */}
+        {/* <CooperationBlock /> */}
         <OurCustomers />
 
         <div className="go-top">

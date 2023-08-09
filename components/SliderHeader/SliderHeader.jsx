@@ -2,7 +2,8 @@
 import { useEffect, useRef } from 'react'
 import Swiper from 'swiper'
 import '../../assets/css/swiper.min.css'
-import bg from '@/assets/img/slider-2.jpg'
+import bg1 from '@/assets/img/slider-1.jpg'
+import bg2 from '@/assets/img/slider-2.jpg'
 
 export default function SliderHeader() {
   const swiperRef = useRef(null)
@@ -11,11 +12,21 @@ export default function SliderHeader() {
     if (typeof window !== 'undefined') {
       swiperRef.current = new Swiper('.swiper-container', {
         loop: true,
+        speed: 900,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
       })
+      const autoplayInterval = setInterval(() => {
+        if (swiperRef.current) {
+          swiperRef.current.slideNext() // Go to the next slide
+        }
+      }, 5000) // 4 seconds
+
+      return () => {
+        clearInterval(autoplayInterval) // Clear interval on component unmount
+      }
     }
   }, [])
   const handleNextButtonClick = (e) => {
@@ -37,7 +48,7 @@ export default function SliderHeader() {
           <div className="swiper-slide">
             <div
               className="bg-img valign"
-              style={{ backgroundImage: `url(${bg.src})` }}
+              style={{ backgroundImage: `url(${bg1.src})` }}
               data-overlay-dark="5"
             >
               <div className="container">
@@ -70,7 +81,7 @@ export default function SliderHeader() {
           <div className="swiper-slide">
             <div
               className="bg-img valign"
-              style={{ backgroundImage: `url(${bg.src})` }}
+              style={{ backgroundImage: `url(${bg2.src})` }}
               data-overlay-dark="5"
             >
               <div className="container">

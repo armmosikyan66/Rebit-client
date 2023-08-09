@@ -16,9 +16,10 @@ import {
 
 
 export default function Home() {
+
   return (
     <>
-      <Layout>
+      <Layout fromHome={true} >
         <SliderHeader />
         <AboutCompany />
         <OurStack />

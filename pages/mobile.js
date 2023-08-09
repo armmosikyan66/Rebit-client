@@ -1,13 +1,11 @@
-import { PageTitle, Layout } from '@/components'
+import { PageTitle } from "@/components";
 
 function Mobile() {
   return (
     <>
-      <Layout>
-        <PageTitle title="Mobile App" />
-      </Layout>
+      <PageTitle title="Mobile App" />
     </>
-  )
+  );
 }
 
-export default Mobile
+export default Mobile;

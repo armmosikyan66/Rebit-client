@@ -1,11 +1,24 @@
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
+'use client'
 
-export default function Layout({ children }) {
+import { useRouter } from 'next/router';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+
+export default function Layout({ fromHome, children }) {
+
+  let router;
+
+  if (!fromHome) {
+    router = useRouter();
+  }
+
+  // console.log('router', router, fromHome);
+  // console.log('Layout');
+
   return (
     <>
-        <Header />
-        {children}
+        <Header route={router?.route} />
+          {children}
         <Footer />
     </>
   )

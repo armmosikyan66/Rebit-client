@@ -1,13 +1,11 @@
-import { Layout, PageTitle } from '@/components'
+import { PageTitle } from "@/components";
 
 function WebDevelopment() {
   return (
     <>
-      <Layout>
-        <PageTitle title={'Web Development'} />
-      </Layout>
+      <PageTitle title={"Web Development"} />
     </>
-  )
+  );
 }
 
-export default WebDevelopment
+export default WebDevelopment;

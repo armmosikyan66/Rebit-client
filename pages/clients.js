@@ -1,13 +1,11 @@
-import { PageTitle, Layout } from '@/components'
+import { PageTitle } from "@/components";
 
 function Clients() {
   return (
     <>
-        <Layout>
-            <PageTitle title={"Our Clients"}/>
-        </Layout>
+      <PageTitle title={"Our Clients"} />
     </>
-  )
+  );
 }
 
-export default Clients
+export default Clients;

@@ -1,13 +1,11 @@
-import { PageTitle, Layout } from '@/components'
+import { PageTitle } from "@/components";
 
 function Devops() {
   return (
     <>
-        <Layout>
-          <PageTitle title={"DevOps"}/>
-        </Layout>
+      <PageTitle title={"DevOps"} />
     </>
-  )
+  );
 }
 
-export default Devops
+export default Devops;

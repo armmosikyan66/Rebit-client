@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useRef } from 'react'
 import Swiper from 'swiper'
-import '../../assets/css/swiper.min.css'
+import '@/public/css/swiper.min.css'
 import bg from '@/assets/img/slider-2.jpg'
 
 const slides = [

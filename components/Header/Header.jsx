@@ -63,30 +63,30 @@ export default function Header({ route }) {
             >
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link href="/" className="nav-link">
+                  <Link href="/" className="nav-link nav-linkk">
                     Home
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="#" className="nav-link">
+                  <Link href="#" className="nav-link nav-linkk">
                     Company <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       {' '}
-                      <Link href="/aboutus" className="nav-link">
+                      <Link href="/aboutus" className="nav-link nav-linkk">
                         About Us
                       </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="/team" className="nav-link">
+                      <Link href="/team" className="nav-link nav-linkk">
                         Team
                       </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="/careers" className="nav-link">
+                      <Link href="/careers" className="nav-link nav-linkk">
                         Careers
                       </Link>
                     </li>
@@ -94,64 +94,64 @@ export default function Header({ route }) {
                 </li>
                 <li className="nav-item">
                   {' '}
-                  {/* <Link href="#" className="nav-link">
+                  {/* <Link href="#" className="nav-link nav-linkk">
                     Services <i className="fas fa-chevron-down"></i>
                   </Link> */}
-                  <Link href="/services" className="nav-link">
+                  <Link href="/services" className="nav-link nav-linkk">
                     Services <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       {' '}
                       {route === '/services' ? 
-                        <a className='nav-link' onClick={(e) => e.preventDefault()} href="">Web Development</a>
+                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="">Web Development</a>
                           :
-                        <Link href={route === "/services" ? '' : '/services'} className="nav-link">
+                        <Link href={route === "/services" ? '' : '/services'} className="nav-link nav-linkk">
                           Web Development
                         </Link>}
                     </li>
                     <li className="nav-item">
                       {' '}
                       {route === '/services' ? 
-                        <a className='nav-link' onClick={(e) => e.preventDefault()} href="">Mobile App</a>
+                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="">Mobile App</a>
                           :
-                        <Link href="/services" className="nav-link">
+                        <Link href="/services" className="nav-link nav-linkk">
                           Mobile App
                         </Link>}
                     </li>
                     <li className="nav-item">
                       {' '}
                       {route === '/services' ? 
-                        <a className='nav-link' onClick={(e) => e.preventDefault()} href="">AI Models</a>
+                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="">AI Models</a>
                           :
-                        <Link href="/services" className="nav-link">
+                        <Link href="/services" className="nav-link nav-linkk">
                           AI Models
                         </Link>}
                     </li>
                     <li className="nav-item">
                       {' '}
                       {route === '/services' ? 
-                        <a className='nav-link' onClick={(e) => e.preventDefault()} href="">DevOps</a>
+                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="">DevOps</a>
                           :
-                        <Link href="/services" className="nav-link">
+                        <Link href="/services" className="nav-link nav-linkk">
                           DevOps
                         </Link>}
                     </li>
                     <li className="nav-item">
                       {' '}
                       {route === '/services' ? 
-                        <a className='nav-link' onClick={(e) => e.preventDefault()} href="">Consulting</a>
+                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="">Consulting</a>
                           :
-                        <Link href="/services" className="nav-link">
+                        <Link href="/services" className="nav-link nav-linkk">
                           Consulting
                         </Link>}
                     </li>
                     <li className="nav-item">
                       {' '}
                       {route === '/services' ? 
-                        <a className='nav-link' onClick={(e) => e.preventDefault()} href="">UI/UX</a>
+                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="">UI/UX</a>
                           :
-                        <Link href="/services" className="nav-link">
+                        <Link href="/services" className="nav-link nav-linkk">
                           UI/UX
                         </Link>}
                     </li>
@@ -159,19 +159,19 @@ export default function Header({ route }) {
                 </li>
                 <li className="nav-item">
                   {' '}
-                  <Link href="#" className="nav-link">
+                  <Link href="#" className="nav-link nav-linkk">
                     Projects <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       {' '}
-                      <Link href="/ourprojects" className="nav-link">
+                      <Link href="/ourprojects" className="nav-link nav-linkk">
                         Our Projects
                       </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="/ourstartups" className="nav-link">
+                      <Link href="/ourstartups" className="nav-link nav-linkk">
                         Our Startups
                       </Link>
                     </li>
@@ -179,19 +179,19 @@ export default function Header({ route }) {
                 </li>
                 <li className="nav-item">
                   {' '}
-                  <Link href="/itschool" className="nav-link">
+                  <Link href="/itschool" className="nav-link nav-linkk">
                     IT School
                   </Link>
                 </li>
                 <li className="nav-item">
                   {' '}
-                  <Link href="/ourclients" className="nav-link">
+                  <Link href="/ourclients" className="nav-link nav-linkk">
                     Our Clients
                   </Link>
                 </li>
                 {/* <li className="nav-item">
                   {' '}
-                  <Link href="/contact" className="nav-link">
+                  <Link href="/contact" className="nav-link nav-linkk">
                     Contact Us
                   </Link>
                 </li> */}

@@ -20,32 +20,32 @@ export default function AboutCompany() {
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua enim ad minim veniam, nostrud
                   </p>
-                  <div className="skills">
-                    <div className="skill-item">
+                  {/* <div className="skills"> */}
+                    {/* <div className="skill-item">
                       <h6>
                         IT Consulting <em>90%</em>
                       </h6>
                       <div className="skill-progress">
                         <div className="progres" data-value="90%"></div>
                       </div>
-                    </div>
-                    <div className="skill-item">
+                    </div> */}
+                    {/* <div className="skill-item">
                       <h6>
                         Virtual Workstation <em>75%</em>
                       </h6>
                       <div className="skill-progress">
                         <div className="progres" data-value="75%"></div>
                       </div>
-                    </div>
-                    <div className="skill-item">
+                    </div> */}
+                    {/* <div className="skill-item">
                       <h6>
                         Managed IT Service <em>80%</em>
                       </h6>
                       <div className="skill-progress">
                         <div className="progres" data-value="80%"></div>
                       </div>
-                    </div>
-                  </div>
+                    </div> */}
+                  {/* </div> */}
                   <div className="about-btn-box">
                     <a
                       className="default-btn project-btn-1"
@@ -61,7 +61,7 @@ export default function AboutCompany() {
               <div className="about-image">
                 <Image src={About} alt="About" />
                 <div className="years-design">
-                  <h2>27</h2>
+                  <h2>5</h2>
                   <h5>Years Experience</h5>
                 </div>
               </div>

@@ -14,7 +14,7 @@ export default function OurStack() {
             <div className="col-lg-4 col-md-6">
               <div className="single-services-item">
                 <div className="services-icon">
-                  <i className="flaticon-project-management"></i>
+                  <i className="flaticon-mobile-app"></i>
                 </div>
                 <h3>Mobile App</h3>
                 <p>
@@ -82,7 +82,7 @@ export default function OurStack() {
             <div className="col-lg-4 col-md-6">
               <div className="single-services-item">
                 <div className="services-icon">
-                  <i className="flaticon-mobile-app"></i>
+                  <i className="flaticon-project-management"></i>
                 </div>
                 <h3>Consulting</h3>
                 <p>

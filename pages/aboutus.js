@@ -1,4 +1,4 @@
-// import OwlCarousel from 'react-owl-carousel'
+// import OwlCarousel from 'react-owl-carousel';
 import {
   AboutCompany,
   OurCustomers,
@@ -6,7 +6,9 @@ import {
   TeamMembers
 } from "@/components";
 
+
 function AboutUs() {
+
   return (
     <>
       <PageTitle title="About Us" />
@@ -16,11 +18,6 @@ function AboutUs() {
       {/* <ClientsSay /> */}
       {/* <CooperationBlock /> */}
       <OurCustomers />
-
-      <div className="go-top">
-        <i className="fas fa-chevron-up"></i>
-        <i className="fas fa-chevron-up"></i>
-      </div>
     </>
   );
 }

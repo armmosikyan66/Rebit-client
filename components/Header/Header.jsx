@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import Logo from '@/assets/img/logo.png'
-import LogoBlack from '@/assets/img/logo-black.png'
+import Logo from '@/assets/img/Logo/Logo_mono_white.png'
+import LogoBlack from '@/assets/img/Logo/Logo_mono_dark.png'
 import { useEffect, useState } from 'react'
 
 const useScrollSticky = () => {
@@ -43,8 +43,8 @@ export default function Header({ route }) {
           <div className="techvio-responsive-menu">
             <div className="logo">
               <Link href="/">
-                <Image src={Logo} className="white-logo" alt="logo" />
-                <Image src={LogoBlack} className="black-logo" alt="logo" />
+                <Image src={Logo} className="white-logo" alt="logo" height={40}/>
+                <Image src={LogoBlack} className="black-logo" alt="logo" height={40} />
               </Link>
             </div>
           </div>
@@ -54,8 +54,8 @@ export default function Header({ route }) {
         <div className="container">
           <nav className="navbar navbar-expand-md navbar-light">
             <Link className="navbar-brand" href="/">
-              <Image src={Logo} className="white-logo" alt="logo" />
-              <Image src={LogoBlack} className="black-logo" alt="logo" />
+              <Image src={Logo} className="white-logo" alt="logo" height={40}/>
+              <Image src={LogoBlack} className="black-logo" alt="logo" height={40} />
             </Link>
             <div
               className="collapse navbar-collapse mean-menu"

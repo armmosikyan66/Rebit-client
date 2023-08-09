@@ -4,38 +4,19 @@ import Swiper from 'swiper'
 import '@/public/css/swiper.min.css'
 import bg from '@/assets/img/slider-2.jpg'
 
-const slides = [
-  {
-    bg: 'url_to_slide1_bg_image.jpg',
-    title: 'We Provide Many Kind of Technology Solutions',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
-    button1Text: 'IT Solution',
-    button1Link: 'about.html',
-    button2Text: 'Contact Us',
-    button2Link: 'contact.html',
-  },
-  {
-    bg: 'url_to_slide2_bg_image.jpg',
-    title: 'IT Solutions & Business Services Company',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
-    button1Text: 'Discover More',
-    button1Link: 'about.html',
-    button2Text: 'Contact Us',
-    button2Link: 'contact.html',
-  },
-]
-
 export default function SliderHeader() {
   const swiperRef = useRef(null)
+
   useEffect(() => {
-    swiperRef.current = new Swiper('.swiper-container', {
-      // Swiper options
-      loop: true, // Infinite loop
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    })
+    if (typeof window !== 'undefined') {
+      swiperRef.current = new Swiper('.swiper-container', {
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      })
+    }
   }, [])
   const handleNextButtonClick = (e) => {
     if (swiperRef.current) {
@@ -53,7 +34,6 @@ export default function SliderHeader() {
     <header className="slider slider-prlx">
       <div className="swiper-container parallax-slider">
         <div className="swiper-wrapper">
-          {/* Your slider slides here */}
           <div className="swiper-slide">
             <div
               className="bg-img valign"

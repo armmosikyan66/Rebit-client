@@ -1,72 +1,64 @@
-import React from 'react'
+'use client'
+import { useEffect, useRef } from 'react'
+import Swiper from 'swiper'
+// import '../../assets/css/swiper.min.css'
+import bg from '@/assets/img/slider-2.jpg'
 
 export default function SliderHeader() {
+  const swiperRef = useRef(null)
+  useEffect(() => {
+    swiperRef.current = new Swiper('.swiper-container', {
+      // Swiper options
+      loop: true, // Infinite loop
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    })
+  }, [])
+  const handleNextButtonClick = (e) => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext() // Go to the next slide
+    }
+  }
+
+  const handlePrevButtonClick = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev() // Go to the previous slide
+    }
+  }
+
   return (
-    <header class="slider slider-prlx">
-        <div class="swiper-container parallax-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div
-                class="bg-img valign"
-                // data-background="assets/img/slider-2.jpg"
-                data-background='../../assets/img/slider-2.jpg'
-                data-overlay-dark="5"
-              >
-                <div class="container">
-                  <div class="row">
-                    <div class="col-lg-8 col-md-12">
-                      <div class="caption">
-                        <h1>We Provide Many Kind of Technology Solutions</h1>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua, magna aliqua. ipsum is simply
-                          dummy text of the printing.
-                        </p>
-                        <div class="banner-btn home-slider-btn">
-                          <a href="about.html" class="default-btn-one">
-                            IT Solution
-                            <span></span>
-                          </a>
-                          <a class="default-btn" href="contact.html">
-                            Contact Us
-                            <span></span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div
-                class="bg-img valign"
-                // data-background="assets/img/slider-2.jpg"
-                data-background='../../assets/img/slider-2.jpg'
-                data-overlay-dark="5"
-              >
-                <div class="container">
-                  <div class="row">
-                    <div class="col-lg-8 col-md-12">
-                      <div class="caption">
-                        <h1>IT Solutions & Business Services Company</h1>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua, magna aliqua. ipsum is simply
-                          dummy text of the printing.
-                        </p>
-                        <div class="banner-btn home-slider-btn">
-                          <a href="about.html" class="default-btn-one">
-                            Discover More
-                            <span></span>
-                          </a>
-                          <a class="default-btn" href="contact.html">
-                            Contact Us
-                            <span></span>
-                          </a>
-                        </div>
+    <header className="slider slider-prlx">
+      <div className="swiper-container parallax-slider">
+        <div className="swiper-wrapper">
+          {/* Your slider slides here */}
+          <div className="swiper-slide">
+            <div
+              className="bg-img valign"
+              style={{ backgroundImage: `url(${bg.src})` }}
+              data-overlay-dark="5"
+            >
+              <div className="container">
+                <div className="row">
+                  <div className="col-lg-8 col-md-12">
+                    <div className="caption">
+                      <h1>We Provide Many Kind of Technology Solutions</h1>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua, magna aliqua. ipsum is simply dummy text
+                        of the printing.
+                      </p>
+                      <div className="banner-btn home-slider-btn">
+                        <a href="about.html" className="default-btn-one">
+                          IT Solution
+                          <span></span>
+                        </a>
+                        <a className="default-btn" href="contact.html">
+                          Contact Us
+                          <span></span>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -74,16 +66,56 @@ export default function SliderHeader() {
               </div>
             </div>
           </div>
-          <div class="control-text">
-            <div class="swiper-button-prev swiper-nav-ctrl prev-ctrl cursor-pointer">
-              <span class="arrow prv"></span>
-            </div>
-            <div class="swiper-button-next swiper-nav-ctrl next-ctrl cursor-pointer">
-              <span class="arrow nxt"></span>
+          <div className="swiper-slide">
+            <div
+              className="bg-img valign"
+              style={{ backgroundImage: `url(${bg.src})` }}
+              data-overlay-dark="5"
+            >
+              <div className="container">
+                <div className="row">
+                  <div className="col-lg-8 col-md-12">
+                    <div className="caption">
+                      <h1>IT Solutions & Business Services Company</h1>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua, magna aliqua. ipsum is simply dummy text
+                        of the printing.
+                      </p>
+                      <div className="banner-btn home-slider-btn">
+                        <a href="about.html" className="default-btn-one">
+                          Discover More
+                          <span></span>
+                        </a>
+                        <a className="default-btn" href="contact.html">
+                          Contact Us
+                          <span></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="swiper-pagination"></div>
         </div>
-      </header>
+        <div className="control-text">
+          <div
+            className="swiper-button-prev swiper-nav-ctrl prev-ctrl cursor-pointer"
+            onClick={handlePrevButtonClick}
+          >
+            <span className="arrow prv"></span>
+          </div>
+          <div
+            className="swiper-button-next swiper-nav-ctrl next-ctrl cursor-pointer"
+            onClick={handleNextButtonClick}
+          >
+            <span className="arrow nxt"></span>
+          </div>
+        </div>
+        <div className="swiper-pagination"></div>
+      </div>
+    </header>
   )
 }

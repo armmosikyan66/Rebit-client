@@ -18,9 +18,11 @@ import { Layout } from "@/components";
 function MyApp({ Component, pageProps }) {
     return (
       <Provider store={store}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          {/* <RootLayout> */}
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          {/* </RootLayout> */}
       </Provider>
     );
 }

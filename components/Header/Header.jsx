@@ -189,17 +189,17 @@ export default function Header({ route }) {
                     Our Clients
                   </Link>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   {' '}
                   <Link href="/contact" className="nav-link">
                     Contact Us
                   </Link>
-                </li>
+                </li> */}
               </ul>
               <div className="other-option">
                 {' '}
                 <Link className="default-btn" href="mailto:demo@example.com">
-                  Get It Support
+                  Contact Us
                   <span></span>
                 </Link>
               </div>

@@ -10,9 +10,9 @@ export default function Footer() {
 					<div className="col-lg-4 col-md-6 col-sm-6">
 						<div className="single-footer-widget">
 							<div className="footer-heading">
-								<h3>About Us</h3>
+								<h3>Rebit.ai</h3>
 							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco consectetur laboris.</p>
+							{/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco consectetur laboris.</p> */}
 							<ul className="footer-social">
 								<li>
 									<a href="#"> <i className="fab fa-facebook-f"></i>
@@ -33,21 +33,22 @@ export default function Footer() {
 							</ul>
 						</div>
 					</div>
-					<div className="col-lg-2 col-md-6 col-sm-6">
+					<div className="col-lg-4 col-md-6 col-sm-6">
 						<div className="single-footer-widget">
 							<div className="footer-heading">
 								<h3>Our Services</h3>
 							</div>
 							<ul className="footer-quick-links">
-								<li> <a href="#">IT Solution</a></li>
 								<li> <a href="projects.html">Web Development</a></li>
-								<li> <a href="services.html">Networking Services</a></li>
-								<li> <a href="team.html">SEO Optimization</a></li>
-								<li> <a href="contact.html">App Optimization</a></li>
+								<li> <a href="#">Mobile App</a></li>
+								<li> <a href="services.html">AI Models</a></li>
+								<li> <a href="team.html">DevOps</a></li>
+								<li> <a href="contact.html">Consulting</a></li>
+								<li> <a href="contact.html">UI/UX</a></li>
 							</ul>
 						</div>
 					</div>
-					<div className="col-lg-2 col-md-6 col-sm-6">
+					{/* <div className="col-lg-2 col-md-6 col-sm-6">
 						<div className="single-footer-widget">
 							<div className="footer-heading">
 								<h3>Useful Links</h3>
@@ -60,7 +61,7 @@ export default function Footer() {
 								<li><a href="terms-condition.html">Terms & Conditions</a></li>
 							</ul>
 						</div>
-					</div>
+					</div> */}
 					<div className="col-lg-4 col-md-6 col-sm-6">
 						<div className="single-footer-widget">
 							<div className="footer-heading">
@@ -68,15 +69,15 @@ export default function Footer() {
 							</div>
 							<div className="footer-info-contact"> <i className="flaticon-phone-call"></i>
 								<h3>Phone</h3>
-								<span><a href="tel:0802235678">080 707 555-321</a></span>
+								<span><a href="tel:0802235678">+374 77 701 105</a></span>
 							</div>
 							<div className="footer-info-contact"> <i className="flaticon-envelope"></i>
 								<h3>Email</h3>
-								<span><a href="mailto:demo@example.com">demo@example.com</a></span>
+								<span><a href="mailto:demo@example.com">hello@rebit.ai</a></span>
 							</div>
 							<div className="footer-info-contact"> <i className="flaticon-placeholder"></i>
 								<h3>Address</h3>
-								<span>526  Melrose Street, Water Mill, 11976  New York</span>
+								<span>Tumanyan 6, Yerevan, Armenia</span>
 							</div>
 						</div>
 					</div>

@@ -6,12 +6,12 @@ function Services() {
   return (
     <>
       <PageTitle title={"Our Services"} />
-      <div className="web-dev">webdevelopment</div>
-      <div className="mobile-app">mobileapp</div>
-      <div className="ai">aiiaiaiaiai</div>
-      <div className="devops">devops</div>
-      <div className="consulting">consulting</div>
-      <div className="uiux">ui ux</div>
+      <div id="web-dev">webdevelopment</div>
+      <div id="mobile-app">mobileapp</div>
+      <div id="ai">aiiaiaiaiai</div>
+      <div id="devops">devops</div>
+      <div id="consulting">consulting</div>
+      <div id="uiux">ui ux</div>
     </>
   );
 }

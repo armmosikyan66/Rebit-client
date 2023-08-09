@@ -16,7 +16,6 @@ import '@/assets/css/swiper.min.css'
 import { Layout } from "@/components";
 
 function MyApp({ Component, pageProps }) {
-<<<<<<< HEAD
     return (
       <Provider store={store}>
           <Layout>
@@ -24,13 +23,6 @@ function MyApp({ Component, pageProps }) {
           </Layout>
       </Provider>
     );
-=======
-  return (
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
-  );
->>>>>>> 86a2051b4f223716058e231a55256eaf4faf1a4b
 }
 
 export default MyApp;

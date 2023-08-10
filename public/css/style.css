@@ -4558,3 +4558,7 @@ blockquote::after,
 /* #web-dev {
 	background-color: greenyellow;
 } */
+
+.nav-link.nav-linkk:focus {
+	color: #048dff !important;
+}

@@ -32,9 +32,12 @@ const useScrollSticky = () => {
 }
 
 export default function Header({ route }) {
+  console.log('route in header', route)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  console.log('route in header', route);
-
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
   const isSticky = useScrollSticky()
   return (
     <div className={`navbar-area ${isSticky ? 'is-sticky' : ''}`}>
@@ -42,11 +45,22 @@ export default function Header({ route }) {
         <div className="container">
           <div className="techvio-responsive-menu">
             <div className="logo">
-              <Link href="/">
-                <Image src={Logo} className="white-logo" alt="logo" height={40}/>
-                <Image src={LogoBlack} className="black-logo" alt="logo" height={40} />
-              </Link>
+              <a href="/">
+                <Image
+                  src={Logo}
+                  className="white-logo"
+                  alt="logo"
+                  height={40}
+                />
+                <Image
+                  src={LogoBlack}
+                  className="black-logo"
+                  alt="logo"
+                  height={40}
+                />
+              </a>
             </div>
+            
           </div>
         </div>
       </div>
@@ -54,11 +68,18 @@ export default function Header({ route }) {
         <div className="container">
           <nav className="navbar navbar-expand-md navbar-light">
             <Link className="navbar-brand" href="/">
-              <Image src={Logo} className="white-logo" alt="logo" height={40}/>
-              <Image src={LogoBlack} className="black-logo" alt="logo" height={40} />
+              <Image src={Logo} className="white-logo" alt="logo" height={40} />
+              <Image
+                src={LogoBlack}
+                className="black-logo"
+                alt="logo"
+                height={40}
+              />
             </Link>
             <div
-              className="collapse navbar-collapse mean-menu"
+              className={`collapse navbar-collapse mean-menu ${
+                isMenuOpen ? 'show' : ''
+              }`}
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav">
@@ -103,57 +124,102 @@ export default function Header({ route }) {
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       {' '}
-                      {route === '/services' ? 
-                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="">Web Development</a>
-                          :
-                        <Link href={route === "/services" ? '' : '/services'} className="nav-link nav-linkk">
+                      {route === '/services' ? (
+                        <a
+                          className="nav-link nav-linkk"
+                          onClick={(e) => e.preventDefault()}
+                          href=""
+                        >
                           Web Development
-                        </Link>}
+                        </a>
+                      ) : (
+                        <Link
+                          href={route === '/services' ? '' : '/services'}
+                          className="nav-link nav-linkk"
+                        >
+                          Web Development
+                        </Link>
+                      )}
                     </li>
                     <li className="nav-item">
                       {' '}
-                      {route === '/services' ? 
-                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="">Mobile App</a>
-                          :
+                      {route === '/services' ? (
+                        <a
+                          className="nav-link nav-linkk"
+                          onClick={(e) => e.preventDefault()}
+                          href=""
+                        >
+                          Mobile App
+                        </a>
+                      ) : (
                         <Link href="/services" className="nav-link nav-linkk">
                           Mobile App
-                        </Link>}
+                        </Link>
+                      )}
                     </li>
                     <li className="nav-item">
                       {' '}
-                      {route === '/services' ? 
-                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="">AI Models</a>
-                          :
+                      {route === '/services' ? (
+                        <a
+                          className="nav-link nav-linkk"
+                          onClick={(e) => e.preventDefault()}
+                          href=""
+                        >
+                          AI Models
+                        </a>
+                      ) : (
                         <Link href="/services" className="nav-link nav-linkk">
                           AI Models
-                        </Link>}
+                        </Link>
+                      )}
                     </li>
                     <li className="nav-item">
                       {' '}
-                      {route === '/services' ? 
-                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="">DevOps</a>
-                          :
+                      {route === '/services' ? (
+                        <a
+                          className="nav-link nav-linkk"
+                          onClick={(e) => e.preventDefault()}
+                          href=""
+                        >
+                          DevOps
+                        </a>
+                      ) : (
                         <Link href="/services" className="nav-link nav-linkk">
                           DevOps
-                        </Link>}
+                        </Link>
+                      )}
                     </li>
                     <li className="nav-item">
                       {' '}
-                      {route === '/services' ? 
-                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="">Consulting</a>
-                          :
+                      {route === '/services' ? (
+                        <a
+                          className="nav-link nav-linkk"
+                          onClick={(e) => e.preventDefault()}
+                          href=""
+                        >
+                          Consulting
+                        </a>
+                      ) : (
                         <Link href="/services" className="nav-link nav-linkk">
                           Consulting
-                        </Link>}
+                        </Link>
+                      )}
                     </li>
                     <li className="nav-item">
                       {' '}
-                      {route === '/services' ? 
-                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="">UI/UX</a>
-                          :
+                      {route === '/services' ? (
+                        <a
+                          className="nav-link nav-linkk"
+                          onClick={(e) => e.preventDefault()}
+                          href=""
+                        >
+                          UI/UX
+                        </a>
+                      ) : (
                         <Link href="/services" className="nav-link nav-linkk">
                           UI/UX
-                        </Link>}
+                        </Link>
+                      )}
                     </li>
                   </ul>
                 </li>

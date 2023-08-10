@@ -13,6 +13,7 @@ import PageTitle from "./PageTitle/PageTitle"
 import SliderHeader from "./SliderHeader/SliderHeader"
 import TeamMembers from "./TeamMembers/TeamMembers"
 import TrustUs from "./TrustUs/TrustUs"
+import ContactUs from "./ContactUs/ContactUs"
 
 export {
     Header,
@@ -29,5 +30,7 @@ export {
     PageTitle,
     SliderHeader,
     TeamMembers,
-    TrustUs
+    TrustUs,
+    ContactUs
+
 }

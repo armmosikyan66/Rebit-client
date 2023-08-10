@@ -1,4 +1,5 @@
 'use client'
+
 import { useEffect, useRef } from 'react'
 import Swiper from 'swiper'
 import '@/public/css/swiper.min.css'

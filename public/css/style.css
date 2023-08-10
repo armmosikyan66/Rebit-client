@@ -4545,6 +4545,10 @@ blockquote::after,
 	color: #048dff !important;
 }
 
-#web-dev, #mobile-app, #ai, #devops, #consulting, #uiux {
+#web-dev, #mobile-app, #ai, #devopss, #consulting, #uiux {
 	height: 200px !important;
 }
+
+/* #web-dev {
+	background-color: greenyellow;
+} */

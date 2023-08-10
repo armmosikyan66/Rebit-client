@@ -1,7 +1,6 @@
 import { PageTitle } from "@/components";
 
 function Services() {
-  console.log('services');
 
   return (
     <>

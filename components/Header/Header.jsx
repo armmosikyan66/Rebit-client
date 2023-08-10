@@ -33,8 +33,6 @@ const useScrollSticky = () => {
 
 export default function Header({ route }) {
 
-  console.log('route in header', route);
-
   const isSticky = useScrollSticky()
   return (
     <div className={`navbar-area ${isSticky ? 'is-sticky' : ''}`}>
@@ -103,58 +101,39 @@ export default function Header({ route }) {
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       {' '}
-                      {route === '/services' ? 
-                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="ssssss">Web Development</a>
-                          :
-                        <Link href='/services/#webdevelopment' className="nav-link nav-linkk">
-                          Web Development
-                        </Link>}
+                      <Link href='/services/#webdevelopment' className="nav-link nav-linkk">
+                        Web Development
+                      </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      {route === '/services' ? 
-                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="eeee">Mobile App</a>
-                          :
-                        <Link href="/services/#mobileapp" className="nav-link nav-linkk">
-                          Mobile App
-                        </Link>}
+                      <Link href="/services/#mobileapp" className="nav-link nav-linkk">
+                        Mobile App
+                      </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      {route === '/services' ? 
-                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="">AI Models</a>
-                          :
-                        <Link href="/services/#aimodels" className="nav-link nav-linkk">
-                          AI Models
-                        </Link>}
+                      <Link href="/services/#aimodels" className="nav-link nav-linkk">
+                        AI Models
+                      </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      {route === '/services' ? 
-                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="">DevOps</a>
-                          :
-                        <Link href="/services/#devops" className="nav-link nav-linkk">
-                          DevOps
-                        </Link>
-                        }
+                      <Link href="/services/#devops" className="nav-link nav-linkk">
+                        DevOps
+                      </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      {route === '/services' ? 
-                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="">Consulting</a>
-                          :
-                        <Link href="/services/#consulting" className="nav-link nav-linkk">
-                          Consulting
-                        </Link>}
+                      <Link href="/services/#consulting" className="nav-link nav-linkk">
+                        Consulting
+                      </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      {route === '/services' ? 
-                        <a className='nav-link nav-linkk' onClick={(e) => e.preventDefault()} href="">UI/UX</a>
-                          :
-                        <Link href="/services" className="nav-link nav-linkk">
-                          UI/UX
-                        </Link>}
+                      <Link href="/services/#uiux" className="nav-link nav-linkk">
+                        UI/UX
+                      </Link>
                     </li>
                   </ul>
                 </li>

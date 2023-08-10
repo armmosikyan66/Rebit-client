@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { ContactUs } from "..";
 
 export default function Footer() {
 
@@ -25,6 +26,9 @@ export default function Footer() {
 
   return (
     <>
+    <section>
+      <ContactUs />
+    </section>
       <section className="footer-subscribe-wrapper">
         <div className="footer-area ptb-100">
           <div className="container">

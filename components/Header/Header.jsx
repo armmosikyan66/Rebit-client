@@ -32,6 +32,9 @@ const useScrollSticky = () => {
 }
 
 export default function Header({ route }) {
+  console.log('route in header', route)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
 
   const isSticky = useScrollSticky()
   return (
@@ -40,11 +43,22 @@ export default function Header({ route }) {
         <div className="container">
           <div className="techvio-responsive-menu">
             <div className="logo">
-              <Link href="/">
-                <Image src={Logo} className="white-logo" alt="logo" height={40}/>
-                <Image src={LogoBlack} className="black-logo" alt="logo" height={40} />
-              </Link>
+              <a href="/">
+                <Image
+                  src={Logo}
+                  className="white-logo"
+                  alt="logo"
+                  height={40}
+                />
+                <Image
+                  src={LogoBlack}
+                  className="black-logo"
+                  alt="logo"
+                  height={40}
+                />
+              </a>
             </div>
+            
           </div>
         </div>
       </div>
@@ -52,11 +66,18 @@ export default function Header({ route }) {
         <div className="container">
           <nav className="navbar navbar-expand-md navbar-light">
             <Link className="navbar-brand" href="/">
-              <Image src={Logo} className="white-logo" alt="logo" height={40}/>
-              <Image src={LogoBlack} className="black-logo" alt="logo" height={40} />
+              <Image src={Logo} className="white-logo" alt="logo" height={40} />
+              <Image
+                src={LogoBlack}
+                className="black-logo"
+                alt="logo"
+                height={40}
+              />
             </Link>
             <div
-              className="collapse navbar-collapse mean-menu"
+              className={`collapse navbar-collapse mean-menu ${
+                isMenuOpen ? 'show' : ''
+              }`}
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav">
@@ -101,6 +122,7 @@ export default function Header({ route }) {
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       {' '}
+
                       <Link href='/services/#webdevelopment' className="nav-link nav-linkk">
                         Web Development
                       </Link>
@@ -134,6 +156,7 @@ export default function Header({ route }) {
                       <Link href="/services/#uiux" className="nav-link nav-linkk">
                         UI/UX
                       </Link>
+
                     </li>
                   </ul>
                 </li>

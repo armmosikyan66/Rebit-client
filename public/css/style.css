@@ -4544,3 +4544,7 @@ blockquote::after,
 .nav-link.nav-linkk:hover {
 	color: #048dff !important;
 }
+
+#web-dev, #mobile-app, #ai, #devops, #consulting, #uiux {
+	height: 200px !important;
+}

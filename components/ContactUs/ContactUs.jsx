@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
+import axios from 'axios'
 
 function ContactUs() {
   const [name, setName] = useState('')
@@ -61,6 +62,15 @@ function ContactUs() {
     setEmail('')
     setPhone('')
     setMessage('')
+
+    const res = await axios.post('https://rebit-server.onrender.com/api/contactUs', {
+      firstName: name,
+      lastName: lastname,
+      email: email,
+      message: message
+    })
+
+    console.log('resssssss', res)
   }
 
   return (

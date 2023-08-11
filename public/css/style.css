@@ -4575,3 +4575,38 @@ blockquote::after,
 	color: #048dff !important;
 
 }
+
+.contact-form .services-icons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .contact-section .services-icon {
+	display: flex;
+	align-items: center;
+	margin-right: 20px;
+  }
+  
+  .services-icon i {
+	margin-right: 10px;
+  }
+  
+  .services-icon a {
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+	padding-left: 20px;
+  }
+  
+  .services-icon a:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 20px;
+	/* background-image: url('path_to_phone_icon.svg');  */
+	background-size: contain;
+  }

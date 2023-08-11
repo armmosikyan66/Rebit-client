@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Image from 'next/image'
+import Contactus from '@/assets/img/contactus.png'
 
 import Cntct from '../../assets/img/about.jpg'
 
@@ -43,7 +44,7 @@ function ContactUs() {
         setCheked(true)
         return
       } else {
-        setError('') 
+        setError('')
         setCheked(false)
       }
 
@@ -51,7 +52,7 @@ function ContactUs() {
         setErrorEmail('Invalid email format')
         return
       }
-      
+
       if (phone && !validatePhone(phone)) {
         setErrorPhone('Invalid phone format. Use format: +374********')
         return
@@ -97,7 +98,7 @@ function ContactUs() {
             <h2>Let's Talk</h2>
           </div>
           <div className="row align-items-center">
-            <div className="col-lg-7 offset-lg-1">
+            <div className="col-lg-6 offset-lg-1">
               <div className="contact-form">
                 <p className="form-message"></p>
                 <br />
@@ -200,6 +201,23 @@ function ContactUs() {
                       ) : null}
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-5 d-flex flex-column align-items-center">
+              <div>
+                <Image src={Contactus} height={200}/>
+              </div>
+              <div className="d-flex flex-column  mt-3">
+                <div className="services-icon d-flex align-items-center" >
+                  <i className="flaticon-phone-call" style={{ fontSize: 24 }}></i>
+                  <a href="tel:0802235678" className="ml-2" style={{ fontSize: 16 }}> +374 77 701 105 </a>
+                </div>
+                <div className="services-icon mt-2 d-flex align-items-center">
+                  <i className="flaticon-envelope" style={{ fontSize: 24 }}></i>
+                  <a href="mailto:demo@example.com" className="ml-2" style={{ fontSize: 16 }}>
+                    hello@rebit.ai
+                  </a>
                 </div>
               </div>
             </div>

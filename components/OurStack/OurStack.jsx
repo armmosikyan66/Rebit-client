@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function OurStack() {
   return (
     <section className="services-section section-padding">
@@ -22,9 +24,9 @@ export default function OurStack() {
                 eiusmod tempor incididunt dolore magna aliqua
               </p>
               <div className="services-btn-link">
-                <a href="#" className="services-link">
+                <Link href="/services/#mobileapp" className="services-link">
                   Read More
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -39,9 +41,9 @@ export default function OurStack() {
                 eiusmod tempor incididunt dolore magna aliqua
               </p>
               <div className="services-btn-link">
-                <a href="#" className="services-link">
+                <Link href="/services/#webdevelopment" className="services-link">
                   Read More
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -56,9 +58,9 @@ export default function OurStack() {
                 eiusmod tempor incididunt dolore magna aliqua
               </p>
               <div className="services-btn-link">
-                <a href="#" className="services-link">
+                <Link href="/services/#aimodels" className="services-link">
                   Read More
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -73,9 +75,9 @@ export default function OurStack() {
                 eiusmod tempor incididunt dolore magna aliqua
               </p>
               <div className="services-btn-link">
-                <a href="#" className="services-link">
+                <Link href="/services/#devops" className="services-link">
                   Read More
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -90,9 +92,9 @@ export default function OurStack() {
                 eiusmod tempor incididunt dolore magna aliqua
               </p>
               <div className="services-btn-link">
-                <a href="#" className="services-link">
+                <Link href="/services/#consulting" className="services-link">
                   Read More
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -107,9 +109,9 @@ export default function OurStack() {
                 eiusmod tempor incididunt dolore magna aliqua
               </p>
               <div className="services-btn-link">
-                <a href="#" className="services-link">
+                <Link href="/services/#uiux" className="services-link">
                   Read More
-                </a>
+                </Link>
               </div>
             </div>
           </div>

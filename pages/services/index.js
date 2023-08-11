@@ -7,7 +7,8 @@ import Mobile from '@/assets/img/mobile-removebg-preview.png';
 import Ai from '@/assets/img/aii-removebg-preview.png';
 import Devops from '@/assets/img/devops.png';
 import Consulting from '@/assets/img/consul-removebg-preview.png';
-import Ui from '@/assets/img/ui.png';
+import Ui3 from '@/assets/img/Social_Media_Platforms-removebg-preview.png';
+
 
 function Services() {
   let router = useRouter();
@@ -189,7 +190,7 @@ function Services() {
       <div id="uiuxs" className="stack-element">
         <div className="content-wrapper">
           <div className="image-block">
-            <Image src={Ui} />
+            <Image src={Ui3} />
           </div>
           <div className="text-block">
             <div className="text-block__title">

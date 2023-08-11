@@ -127,11 +127,13 @@ a:hover {
 	text-decoration: none;
 	color: #7b68ee;
 }
+
 .error-text {
 	color: #fc0303;
 	margin-top: 5px;
 	text-align: center;
-	
+	font-size: 12px;
+
 }
 
 .h1,
@@ -4551,10 +4553,20 @@ blockquote::after,
 	color: #048dff !important;
 }
 
-#web-dev, #mobile-app, #ai, #devopss, #consulting, #uiux {
+#web-dev,
+#mobile-app,
+#ai,
+#devopss,
+#consulting,
+#uiux {
 	height: 200px !important;
 }
 
 /* #web-dev {
 	background-color: greenyellow;
 } */
+
+.error-req {
+	border: 1px solid red !important;
+	border-left: 3px solid #fe0404 !important;
+}

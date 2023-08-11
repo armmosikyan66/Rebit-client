@@ -3,19 +3,31 @@ import axios from 'axios'
 import Image from 'next/image'
 import Contactus from '@/assets/img/contactus.png'
 
-import Cntct from '../../assets/img/about.jpg'
-
 function ContactUs() {
-  const [name, setName] = useState('')
-  const [lastname, setLastName] = useState('')
-  const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
-  const [message, setMessage] = useState('')
-  const [errorEmail, setErrorEmail] = useState('')
-  const [errorPhone, setErrorPhone] = useState('')
-  const [errorMessage, setErrorMessage] = useState('')
-  const [error, setError] = useState('')
-  const [checked, setCheked] = useState(false)
+  const [formData, setFormData] = useState({
+    name: '',
+    lastname: '',
+    email: '',
+    phone: '',
+    message: '',
+  })
+
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+    general: '',
+  })
+
+  const [checked, setChecked] = useState(false)
+
+  useEffect(() => {
+    const { name, email, message } = formData
+    if (name && email && message) {
+      setChecked(true)
+    }
+  }, [formData])
 
   const validateEmail = (email) => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -26,66 +38,72 @@ function ContactUs() {
     const phonePattern = /^\+\d{11}$/
     return phonePattern.test(phone)
   }
-  useEffect(() => {
-    if (name && email && message) {
-      setCheked(true)
-    }
-  }, [name, email, message])
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }))
+
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: '',
+    }))
+  }
+
+  const newErrors = {
+    name: !formData.name ? 'Please enter your first name' : '',
+    email: !formData.email ? 'Please enter your email' : '',
+    message: !formData.message ? 'Please enter your message' : '',
+    phone: '',
+    general: '',
+  }
   const handleSubmit = async (event) => {
     try {
       event.preventDefault()
-      setError('')
-      setErrorEmail('')
-      setErrorPhone('')
-      setCheked(false)
 
-      if (!name && !email && !message) {
-        setError('Please fill in all required fields')
-        setCheked(true)
-        return
+      if (formData.email && !validateEmail(formData.email)) {
+        newErrors.email = 'Invalid email format'
+      }
+
+      if (formData.phone && !validatePhone(formData.phone)) {
+        newErrors.phone = 'Invalid phone format. Use format: +374********'
+      }
+
+      if (!newErrors.name && !newErrors.email && !newErrors.message) {
+        console.log('====================================')
+        console.log(newErrors)
+        console.log('====================================')
+        setErrors({ ...newErrors })
+        setChecked(true)
+
+        console.log('Form submitted with:', formData)
+
+        const res = await axios.post(
+          'https://rebit-server.onrender.com/api/contactUs',
+          {
+            firstName: formData.name,
+            lastName: formData.lastname,
+            email: formData.email,
+            message: formData.message,
+          },
+        )
+
+        setFormData({
+          name: '',
+          lastname: '',
+          email: '',
+          phone: '',
+          message: '',
+        })
       } else {
-        setError('')
-        setCheked(false)
+        newErrors.general = 'Please fill in all required fields'
+        setErrors({ ...newErrors })
+        setChecked(false)
       }
-
-      if (!validateEmail(email)) {
-        setErrorEmail('Invalid email format')
-        return
-      }
-
-      if (phone && !validatePhone(phone)) {
-        setErrorPhone('Invalid phone format. Use format: +374********')
-        return
-      }
-      console.log('Form submitted with:', {
-        name,
-        lastname,
-        email,
-        phone,
-        message,
-      })
-
-      setName('')
-      setLastName('')
-      setEmail('')
-      setPhone('')
-      setMessage('')
-
-      const res = await axios.post(
-        'https://rebit-server.onrender.com/api/contactUs',
-        {
-          firstName: name,
-          lastName: lastname,
-          email: email,
-          message: message,
-        },
-      )
-
-      console.log('resssssss', res)
     } catch (error) {
-      console.log('====================================')
       console.log(error)
-      console.log('====================================')
     }
   }
 
@@ -111,12 +129,15 @@ function ContactUs() {
                           name="name"
                           id="name"
                           className={`form-control ${
-                            checked && !name ? 'error-req' : ''
+                            !checked && errors.name ? 'error-req' : ''
                           }`}
                           placeholder="First Name"
-                          onChange={(e) => setName(e.target.value)}
-                          value={name}
+                          onChange={(e) => handleInputChange(e)}
+                          value={formData.name}
                         />
+                        {errors.name ? (
+                          <p className="error-text">{errors.name}</p>
+                        ) : null}
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-6">
@@ -127,8 +148,8 @@ function ContactUs() {
                           id="lastname"
                           className="form-control"
                           placeholder="Last Name"
-                          onChange={(e) => setLastName(e.target.value)}
-                          value={lastname}
+                          onChange={(e) => handleInputChange(e)}
+                          value={formData.lastname}
                         />
                       </div>
                     </div>
@@ -139,15 +160,15 @@ function ContactUs() {
                           name="email"
                           id="email"
                           className={`form-control ${
-                            checked && !email ? 'error-req' : ''
+                            !checked && errors.email ? 'error-req' : ''
                           }`}
                           required
                           placeholder="Email"
-                          onChange={(e) => setEmail(e.target.value)}
-                          value={email}
+                          onChange={(e) => handleInputChange(e)}
+                          value={formData.email}
                         />
-                        {errorEmail ? (
-                          <p className="error-text">{errorEmail}</p>
+                        {errors.email ? (
+                          <p className="error-text">{errors.email}</p>
                         ) : null}
                       </div>
                     </div>
@@ -158,13 +179,15 @@ function ContactUs() {
                           name="phone"
                           id="phone"
                           required=""
-                          className="form-control"
+                          className={`form-control ${
+                            !checked && errors.phone ? 'error-req' : ''
+                          }`}
                           placeholder="Phone"
-                          onChange={(e) => setPhone(e.target.value)}
-                          value={phone}
+                          onChange={(e) => handleInputChange(e)}
+                          value={formData.phone}
                         />
-                        {errorPhone ? (
-                          <p className="error-text">{errorPhone}</p>
+                        {errors.phone ? (
+                          <p className="error-text">{errors.phone}</p>
                         ) : null}
                       </div>
                     </div>
@@ -174,16 +197,19 @@ function ContactUs() {
                         <textarea
                           name="message"
                           className={`form-control ${
-                            checked && !message ? 'error-req' : ''
+                            !checked && errors.message ? 'error-req' : ''
                           }`}
                           id="message"
                           cols="30"
                           rows="6"
                           required
                           placeholder="Your Message"
-                          onChange={(e) => setMessage(e.target.value)}
-                          value={message}
+                          onChange={(e) => handleInputChange(e)}
+                          value={formData.message}
                         ></textarea>
+                        {errors.message ? (
+                          <p className="error-text">{errors.message}</p>
+                        ) : null}
                       </div>
                     </div>
                     <div className="col-lg-12 col-md-12">
@@ -194,11 +220,6 @@ function ContactUs() {
                       >
                         Send Message <span></span>
                       </button>
-                      {error ? (
-                        <div>
-                          <p className="error-text">{error}</p>
-                        </div>
-                      ) : null}
                     </div>
                   </div>
                 </div>
@@ -206,16 +227,30 @@ function ContactUs() {
             </div>
             <div className="col-lg-5 d-flex flex-column align-items-center">
               <div>
-                <Image src={Contactus} height={200}/>
+                <Image src={Contactus} height={200} />
               </div>
               <div className="d-flex flex-column  mt-3">
-                <div className="services-icon d-flex align-items-center" >
-                  <i className="flaticon-phone-call" style={{ fontSize: 24 }}></i>
-                  <a href="tel:0802235678" className="ml-2" style={{ fontSize: 16 }}> +374 77 701 105 </a>
+                <div className="services-icon d-flex align-items-center">
+                  <i
+                    className="flaticon-phone-call"
+                    style={{ fontSize: 24 }}
+                  ></i>
+                  <a
+                    href="tel:0802235678"
+                    className="ml-2"
+                    style={{ fontSize: 16 }}
+                  >
+                    {' '}
+                    +374 77 701 105{' '}
+                  </a>
                 </div>
                 <div className="services-icon mt-2 d-flex align-items-center">
                   <i className="flaticon-envelope" style={{ fontSize: 24 }}></i>
-                  <a href="mailto:demo@example.com" className="ml-2" style={{ fontSize: 16 }}>
+                  <a
+                    href="mailto:demo@example.com"
+                    className="ml-2"
+                    style={{ fontSize: 16 }}
+                  >
                     hello@rebit.ai
                   </a>
                 </div>

@@ -1,5 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
+import Image from 'next/image'
+
+import Cntct from '../../assets/img/about.jpg'
 
 function ContactUs() {
   const [name, setName] = useState('')
@@ -10,7 +13,8 @@ function ContactUs() {
   const [errorEmail, setErrorEmail] = useState('')
   const [errorPhone, setErrorPhone] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
-  const [errorName, setErrorName] = useState('')
+  const [error, setError] = useState('')
+  const [checked, setCheked] = useState(false)
 
   const validateEmail = (email) => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -21,56 +25,67 @@ function ContactUs() {
     const phonePattern = /^\+\d{11}$/
     return phonePattern.test(phone)
   }
-
+  useEffect(() => {
+    if (name && email && message) {
+      setCheked(true)
+    }
+  }, [name, email, message])
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    setErrorName('')
-    setErrorEmail('')
-    setErrorPhone('')
+    try {
+      event.preventDefault()
+      setError('')
+      setErrorEmail('')
+      setErrorPhone('')
+      setCheked(false)
 
-    if (!name) {
-      setErrorName('Please fill in all required fields')
-      return
-    }
-    if (!email) {
-      setErrorEmail('Please fill in all required fields')
-      return
-    }
-    if (!validateEmail(email)) {
-      setErrorEmail('Invalid email format')
-      return
-    }
-    if (!message) {
-      setErrorMessage('Please fill in all required fields')
-      return
-    }
+      if (!name && !email && !message) {
+        setError('Please fill in all required fields')
+        setCheked(true)
+        return
+      } else {
+        setError('') 
+        setCheked(false)
+      }
 
-    if (phone && !validatePhone(phone)) {
-      setErrorPhone('Invalid phone format. Use format: +374********')
-      return
+      if (!validateEmail(email)) {
+        setErrorEmail('Invalid email format')
+        return
+      }
+      
+      if (phone && !validatePhone(phone)) {
+        setErrorPhone('Invalid phone format. Use format: +374********')
+        return
+      }
+      console.log('Form submitted with:', {
+        name,
+        lastname,
+        email,
+        phone,
+        message,
+      })
+
+      setName('')
+      setLastName('')
+      setEmail('')
+      setPhone('')
+      setMessage('')
+
+      const res = await axios.post(
+        'https://rebit-server.onrender.com/api/contactUs',
+        {
+          firstName: name,
+          lastName: lastname,
+          email: email,
+          message: message,
+        },
+      )
+
+      console.log('resssssss', res)
+    } catch (error) {
+      console.log('====================================')
+      console.log(error)
+      console.log('====================================')
     }
-    console.log('Form submitted with:', {
-      name,
-      lastname,
-      email,
-      phone,
-      message,
-    })
-
-    setName('')
-    setLastName('')
-    setEmail('')
-    setPhone('')
-    setMessage('')
-
-    const res = await axios.post('https://rebit-server.onrender.com/api/contactUs', {
-      firstName: name,
-      lastName: lastname,
-      email: email,
-      message: message
-    })
-
-    console.log('resssssss', res)
   }
 
   return (
@@ -82,26 +97,25 @@ function ContactUs() {
             <h2>Let's Talk</h2>
           </div>
           <div className="row align-items-center">
-            <div className="col-lg-10 offset-lg-1">
+            <div className="col-lg-7 offset-lg-1">
               <div className="contact-form">
                 <p className="form-message"></p>
                 <br />
                 <div id="contact-form" className="contact-form form">
                   <div className="row">
                     <div className="col-lg-6 col-md-6">
-                      <div className="form-group">
+                      <div className="form-group ">
                         <input
                           type="text"
                           name="name"
                           id="name"
-                          className="form-control"
+                          className={`form-control ${
+                            checked && !name ? 'error-req' : ''
+                          }`}
                           placeholder="First Name"
                           onChange={(e) => setName(e.target.value)}
                           value={name}
                         />
-                        {errorName ? (
-                          <p className="error-text">{errorName}</p>
-                        ) : null}
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-6">
@@ -123,7 +137,9 @@ function ContactUs() {
                           type="email"
                           name="email"
                           id="email"
-                          className="form-control"
+                          className={`form-control ${
+                            checked && !email ? 'error-req' : ''
+                          }`}
                           required
                           placeholder="Email"
                           onChange={(e) => setEmail(e.target.value)}
@@ -156,7 +172,9 @@ function ContactUs() {
                       <div className="form-group">
                         <textarea
                           name="message"
-                          className="form-control"
+                          className={`form-control ${
+                            checked && !message ? 'error-req' : ''
+                          }`}
                           id="message"
                           cols="30"
                           rows="6"
@@ -165,9 +183,6 @@ function ContactUs() {
                           onChange={(e) => setMessage(e.target.value)}
                           value={message}
                         ></textarea>
-                        {errorMessage ? (
-                          <p className="error-text">{errorMessage}</p>
-                        ) : null}
                       </div>
                     </div>
                     <div className="col-lg-12 col-md-12">
@@ -178,6 +193,11 @@ function ContactUs() {
                       >
                         Send Message <span></span>
                       </button>
+                      {error ? (
+                        <div>
+                          <p className="error-text">{error}</p>
+                        </div>
+                      ) : null}
                     </div>
                   </div>
                 </div>

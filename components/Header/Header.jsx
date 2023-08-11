@@ -32,8 +32,16 @@ const useScrollSticky = () => {
 }
 
 export default function Header({ route }) {
+
   console.log('route in header', route)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toContacts = () => {
+    const navbar = document.getElementsByClassName("navbar-area")[0];
+    const contacts = document.getElementsByClassName('contact-section')[0]
+    const rect = contacts.getBoundingClientRect().top - navbar.clientHeight;
+    window.scrollTo({ top: rect, behavior: "smooth" });
+  }
 
 
   const isSticky = useScrollSticky()
@@ -113,10 +121,7 @@ export default function Header({ route }) {
                 </li>
                 <li className="nav-item">
                   {' '}
-                  {/* <Link href="#" className="nav-link nav-linkk">
-                    Services <i className="fas fa-chevron-down"></i>
-                  </Link> */}
-                  <Link href="/services" className="nav-link nav-linkk">
+                  <Link href="/services" id='services' className="nav-link nav-linkk">
                     Services <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
@@ -186,22 +191,10 @@ export default function Header({ route }) {
                     IT School
                   </Link>
                 </li>
-                <li className="nav-item">
-                  {' '}
-                  <Link href="/ourclients" className="nav-link nav-linkk">
-                    Our Clients
-                  </Link>
-                </li>
-                {/* <li className="nav-item">
-                  {' '}
-                  <Link href="/contact" className="nav-link nav-linkk">
-                    Contact Us
-                  </Link>
-                </li> */}
               </ul>
               <div className="other-option">
                 {' '}
-                <Link className="default-btn" href="mailto:demo@example.com">
+                <Link className="default-btn" onClick={toContacts} href={'#contacts'}>
                   Contact Us
                   <span></span>
                 </Link>

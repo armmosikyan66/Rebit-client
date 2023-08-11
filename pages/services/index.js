@@ -3,10 +3,10 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { PageTitle } from "@/components";
 import Web from '@/assets/img/webb-removebg-preview.png';
-import Mobile from '@/assets/img/mobile.png';
-import Ai from '@/assets/img/aii.png';
+import Mobile from '@/assets/img/mobile-removebg-preview.png';
+import Ai from '@/assets/img/aii-removebg-preview.png';
 import Devops from '@/assets/img/devops.png';
-import Consulting from '@/assets/img/consul.png';
+import Consulting from '@/assets/img/consul-removebg-preview.png';
 import Ui from '@/assets/img/ui.png';
 
 function Services() {

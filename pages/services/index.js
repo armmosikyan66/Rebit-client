@@ -1,6 +1,6 @@
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { useEffect } from "react";
 import { PageTitle } from "@/components";
 import Web from '@/assets/img/webb-removebg-preview.png';
 import Mobile from '@/assets/img/mobile-removebg-preview.png';
@@ -12,10 +12,6 @@ import Ui from '@/assets/img/ui.png';
 function Services() {
   let router = useRouter();
   const asPath = router.asPath;
-  console.log("asPath", asPath);
-
-  //   console.log('services');
-  //   console.log('route', router.asPath);
 
   useEffect(() => {
     (() => {

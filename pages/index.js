@@ -7,7 +7,7 @@ import {
     TrustUs, 
     Achievements, 
     ClientsSay, 
-    TeamMembers, 
+    School, 
     Blog, 
     CooperationBlock, 
     OurCustomers 
@@ -26,7 +26,7 @@ import {
           {/* <TrustUs /> */}
           {/* <Achievements /> */}
           {/* <ClientsSay /> */}
-          <TeamMembers />
+          <School />
           {/* <Blog /> */}
           {/* <CooperationBlock /> */}
           <OurCustomers />

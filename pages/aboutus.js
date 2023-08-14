@@ -3,7 +3,7 @@ import {
   AboutCompany,
   OurCustomers,
   PageTitle,
-  TeamMembers
+  School
 } from "@/components";
 
 
@@ -14,7 +14,7 @@ function AboutUs() {
       <PageTitle title="About Us" />
       <AboutCompany />
       {/* <Achievements /> */}
-      <TeamMembers />
+      <School />
       {/* <ClientsSay /> */}
       {/* <CooperationBlock /> */}
       <OurCustomers />

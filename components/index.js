@@ -11,7 +11,7 @@ import OurCustomers from "./OurCustomers/OurCustomers"
 import OurStack from "./OurStack/OurStack"
 import PageTitle from "./PageTitle/PageTitle"
 import SliderHeader from "./SliderHeader/SliderHeader"
-import TeamMembers from "./TeamMembers/TeamMembers"
+import School from "./School/School"
 import TrustUs from "./TrustUs/TrustUs"
 import ContactUs from "./ContactUs/ContactUs"
 
@@ -29,7 +29,7 @@ export {
     OurStack,
     PageTitle,
     SliderHeader,
-    TeamMembers,
+    School,
     TrustUs,
     ContactUs
 

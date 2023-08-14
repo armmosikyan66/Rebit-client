@@ -271,7 +271,7 @@ function ContactUs() {
                     style={{ fontSize: 24 }}
                   ></i>
                   <a
-                    href="mailto:demo@example.com"
+                    // href=""
                     className="ml-2"
                     style={{ fontSize: 16 }}
                   >

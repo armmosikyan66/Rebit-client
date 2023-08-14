@@ -112,7 +112,6 @@ function ContactUs() {
       <div className="contact-section bg-grey section-padding">
         <div className="container">
           <div className="section-title">
-            <h6>Contact Us</h6>
             <h2>Let's Talk</h2>
           </div>
           <div className="row align-items-center">

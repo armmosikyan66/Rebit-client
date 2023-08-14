@@ -39,14 +39,14 @@ export default function Header({ route }) {
   const toContacts = () => {
     const navbar = document.getElementsByClassName("navbar-area")[0];
     const contacts = document.getElementsByClassName('contact-section')[0]
-    const rect = contacts.getBoundingClientRect().top - navbar.clientHeight;
+    const rect = contacts.getBoundingClientRect().top + window.pageYOffset - navbar.clientHeight;
     window.scrollTo({ top: rect, behavior: "smooth" });
   }
 
 
   const isSticky = useScrollSticky()
   return (
-    <div className={`navbar-area ${isSticky ? 'is-sticky' : ''}`}>
+    <div id='navbar' className={`navbar-area ${isSticky ? 'is-sticky' : ''}`}>
       <div className="techvio-responsive-nav">
         <div className="container">
           <div className="techvio-responsive-menu">
@@ -194,10 +194,10 @@ export default function Header({ route }) {
               </ul>
               <div className="other-option">
                 {' '}
-                <Link className="default-btn" onClick={toContacts} href={'#contacts'}>
+                <button className="default-btn" onClick={toContacts}>
                   Contact Us
                   <span></span>
-                </Link>
+                </button>
               </div>
             </div>
           </nav>

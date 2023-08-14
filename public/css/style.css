@@ -4561,6 +4561,10 @@ blockquote::after,
 	color: #048dff !important;
 }
 
+/* .nav-link.nav-linkk.actives {
+	color: red !important;
+} */
+
 .stack-element {
 	padding: 20px 40px;
 }

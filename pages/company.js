@@ -65,52 +65,28 @@ function Company() {
         const navbar = document.getElementsByClassName("navbar-area")[0];
 
         if (last === "aboutus") {
-          const element = document.getElementById("about-us");
+          const element = document.getElementsByClassName('about-area')[0];
           const rect =
             element.getBoundingClientRect().top +
             window.pageYOffset -
             navbar.clientHeight;
           console.log("aboutus", rect);
           window.scrollTo({ top: rect, behavior: "smooth" });
-        } else if (last === "mobileapp") {
-          const element = document.getElementById("mobile-app");
+        } else if (last === "team") {
+          const element = document.getElementsByClassName("team-area")[0];
           const rect =
             element.getBoundingClientRect().top +
             window.pageYOffset -
             navbar.clientHeight;
-          console.log("mobileapp", rect);
+          console.log("team", rect);
           window.scrollTo({ top: rect, behavior: "smooth" });
-        } else if (last === "aimodels") {
-          const element = document.getElementById("ai");
+        } else if (last === "careers") {
+          const element = document.getElementById("careersss");
           const rect =
             element.getBoundingClientRect().top +
             window.pageYOffset -
             navbar.clientHeight;
-          console.log("aimodels", rect);
-          window.scrollTo({ top: rect, behavior: "smooth" });
-        } else if (last === "devops") {
-          const element = document.getElementById("devopss");
-          const rect =
-            element.getBoundingClientRect().top +
-            window.pageYOffset -
-            navbar.clientHeight;
-          console.log("devops", rect);
-          window.scrollTo({ top: rect, behavior: "smooth" });
-        } else if (last === "consulting") {
-          const element = document.getElementById("xxxxxxx");
-          const rect =
-            element.getBoundingClientRect().top +
-            window.pageYOffset -
-            navbar.clientHeight;
-          console.log("consulting", rect);
-          window.scrollTo({ top: rect, behavior: "smooth" });
-        } else if (last === "uiux") {
-          const element = document.getElementById("uiuxs");
-          const rect =
-            element.getBoundingClientRect().top +
-            window.pageYOffset -
-            navbar.clientHeight;
-          console.log("uiux", rect);
+          console.log("careers", rect);
           window.scrollTo({ top: rect, behavior: "smooth" });
         }
       }
@@ -142,7 +118,7 @@ function Company() {
         </div>
       </section>
 
-      <div id="careers">Careers</div>
+      <div id="careersss">Careers</div>
     </>
   );
 }

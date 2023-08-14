@@ -3062,7 +3062,7 @@ p:last-child {
 .contact-section {}
 
 .contact-form .form-group {
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 }
 
 .contact-form div .form-control {
@@ -4557,6 +4557,7 @@ blockquote::after,
 	border: 1px solid red !important;
 	border-left: 3px solid #fe0404 !important;
 }
+
 .nav-link.nav-linkk:focus {
 	color: #048dff !important;
 }
@@ -4592,22 +4593,22 @@ blockquote::after,
 	max-width: 400px;
 }
 
-.text-block > .text-block__title {
+.text-block>.text-block__title {
 	margin-bottom: 10px;
 }
 
-.text-block > .text-block__title > span {
+.text-block>.text-block__title>span {
 	font-size: 24px;
 	font-weight: 700;
-	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
-.text-block > p {
+.text-block>p {
 	color: black;
 	font-size: 20px;
 	font-weight: 500;
 	line-height: 1.5715;
-	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
 
@@ -4615,26 +4616,26 @@ blockquote::after,
 	display: flex;
 	justify-content: center;
 	align-items: center;
-  }
-  
-  .contact-section .services-icon {
+}
+
+.contact-section .services-icon {
 	display: flex;
 	align-items: center;
 	margin-right: 20px;
-  }
-  
-  .services-icon i {
+}
+
+.services-icon i {
 	margin-right: 10px;
-  }
-  
-  .services-icon a {
+}
+
+.services-icon a {
 	display: inline-flex;
 	align-items: center;
 	position: relative;
 	padding-left: 20px;
-  }
-  
-  .services-icon a:before {
+}
+
+.services-icon a:before {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -4644,4 +4645,48 @@ blockquote::after,
 	height: 20px;
 	/* background-image: url('path_to_phone_icon.svg');  */
 	background-size: contain;
-  }
+}
+
+/*  -----------------------  */
+
+.it-school .content-wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.it-school  .animation-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.it-school .text-block {
+	flex: 1;
+	padding: 20px;
+}
+
+.it-school .text-block__title {
+	font-size: 28px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.it-school .text-block p {
+	color: #555;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.it-school .image-block {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+}
+
+.it-school .image-block img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

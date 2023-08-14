@@ -15,7 +15,7 @@ export default function OurCustomers() {
     <section className="partner-section pt-100 pb-70">
       <div className="container">
         <div className="partner-title">
-          <h6>Trusted By Over 40,000</h6>
+          {/* <h6>Trusted By Over 40,000</h6> */}
           <h2>Our Customers</h2>
         </div>
         <div className="partner-list">

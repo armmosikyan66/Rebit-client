@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from 'next/link'
 
 export default function OurStack() {
   return (
@@ -7,8 +7,8 @@ export default function OurStack() {
         <div className="row">
           <div className="col-sm-12">
             <div className="section-title">
-              <h6>What We Provide</h6>
-              <h2>IT Solutions</h2>
+              {/* <h6>What We Provide</h6> */}
+              <h2>What We Provide</h2>
             </div>
           </div>
         </div>
@@ -41,7 +41,10 @@ export default function OurStack() {
                 eiusmod tempor incididunt dolore magna aliqua
               </p>
               <div className="services-btn-link">
-                <Link href="/services/#webdevelopment" className="services-link">
+                <Link
+                  href="/services/#webdevelopment"
+                  className="services-link"
+                >
                   Read More
                 </Link>
               </div>

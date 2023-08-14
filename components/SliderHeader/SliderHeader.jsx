@@ -9,6 +9,13 @@ import bg2 from '@/assets/img/slider-2.jpg'
 export default function SliderHeader() {
   const swiperRef = useRef(null)
 
+  const toContacts = () => {
+    const navbar = document.getElementsByClassName("navbar-area")[0];
+    const contacts = document.getElementsByClassName('contact-section')[0]
+    const rect = contacts.getBoundingClientRect().top - navbar.clientHeight;
+    window.scrollTo({ top: rect, behavior: "smooth" });
+  }
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       swiperRef.current = new Swiper('.swiper-container', {
@@ -64,11 +71,11 @@ export default function SliderHeader() {
                         of the printing.
                       </p>
                       <div className="banner-btn home-slider-btn">
-                        <a href="about.html" className="default-btn-one">
+                        <a href="services" className="default-btn-one">
                           IT Solution
                           <span></span>
                         </a>
-                        <a className="default-btn" href="contact.html">
+                        <a className="default-btn" onClick={toContacts} href={'#contacts'}>
                           Contact Us
                           <span></span>
                         </a>
@@ -97,11 +104,11 @@ export default function SliderHeader() {
                         of the printing.
                       </p>
                       <div className="banner-btn home-slider-btn">
-                        <a href="about.html" className="default-btn-one">
+                        <a href="services" className="default-btn-one">
                           Discover More
                           <span></span>
                         </a>
-                        <a className="default-btn" href="contact.html">
+                        <a className="default-btn" onClick={toContacts} href={'#contacts'}>
                           Contact Us
                           <span></span>
                         </a>

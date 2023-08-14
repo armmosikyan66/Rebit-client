@@ -265,6 +265,19 @@ function ContactUs() {
                     hello@rebit.ai
                   </a>
                 </div>
+                <div className="services-icon mt-2 d-flex align-items-center">
+                  <i
+                    className="flaticon-location"
+                    style={{ fontSize: 24 }}
+                  ></i>
+                  <a
+                    // href=""
+                    className="ml-2"
+                    style={{ fontSize: 16 }}
+                  >
+                    Tumanyan 6, Yerevan, Armenia
+                  </a>
+                </div>
               </div>
             </div>
           </div>

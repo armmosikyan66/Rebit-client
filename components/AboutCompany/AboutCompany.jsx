@@ -49,7 +49,7 @@ export default function AboutCompany() {
                   <div className="about-btn-box">
                     <a
                       className="default-btn project-btn-1"
-                      href="projects.html"
+                      href="company"
                     >
                       Learn More<span></span>
                     </a>

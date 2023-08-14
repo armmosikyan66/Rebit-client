@@ -240,39 +240,31 @@ function ContactUs() {
               <div>
                 <Image src={Contactus} height={200} />
               </div>
-              <div className="d-flex flex-column  mt-3">
-                <div className="services-icon d-flex align-items-center">
-                  <i
-                    className="flaticon-phone-call"
-                    style={{ fontSize: 24 }}
-                  ></i>
-                  <a
-                    href="tel:0802235678"
-                    className="ml-2"
-                    style={{ fontSize: 16 }}
-                  >
-                    {' '}
-                    +374 77 701 105{' '}
+              <div className="d-flex flex-column    " style={{paddingLeft:100}}>
+                <div className="services-icon d-flex align-items-center align ">
+                  <i className="flaticon-phone-call" style={{display:'flex', fontSize: 24, justifyContent:'center', alignItems:'center' }}/>
+                  <a href="tel:0802235678" className="ml-0" style={{ fontSize: 16, alignContent:'center' }}>                   
+                    +374 77 701 105
                   </a>
                 </div>
-                <div className="services-icon mt-2 d-flex align-items-center">
-                  <i className="flaticon-envelope" style={{ fontSize: 24 }}></i>
+                <div className="services-icon d-flex align-items-center">
+                  <i className="flaticon-envelope" style={{display:'flex', fontSize: 24, justifyContent:'center', alignItems:'center' }}></i>
                   <a
                     href="mailto:demo@example.com"
-                    className="ml-2"
+                    className="ml-0"
                     style={{ fontSize: 16 }}
                   >
                     hello@rebit.ai
                   </a>
                 </div>
-                <div className="services-icon mt-2 d-flex align-items-center">
+                <div className="services-icon  align-items-center">
                   <i
                     className="flaticon-location"
-                    style={{ fontSize: 24 }}
+                    style={{display:'flex', fontSize: 24, justifyContent:'center', alignItems:'center' }}
                   ></i>
                   <a
                     // href=""
-                    className="ml-2"
+                    className="ml-0"
                     style={{ fontSize: 16 }}
                   >
                     Tumanyan 6, Yerevan, Armenia

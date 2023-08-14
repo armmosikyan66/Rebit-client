@@ -12,8 +12,7 @@ export default function AboutCompany() {
                 <div className="about-content-text">
                   <h6>About Our Company</h6>
                   <h2>
-                    Providing your business with a quality IT service is our
-                    passion.
+                  Rebit.ai is a software development company that offers innovative solutions to help businesses achieve their goals.                                                                     
                   </h2>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

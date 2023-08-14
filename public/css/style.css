@@ -112,7 +112,7 @@ ul {
 }
 
 .section-padding {
-	padding: 100px 0;
+	padding: 30px 0;
 }
 
 a {
@@ -314,7 +314,7 @@ p:last-child {
 
 .section-title {
 	text-align: center;
-	margin-bottom: 65px;
+	/* margin-bottom: 65px; */
 	line-height: 1.5;
 }
 
@@ -1438,7 +1438,7 @@ p:last-child {
 .single-services-item .services-btn-link .services-link {
 	display: inline-block;
 	font-size: 16px;
-	color: #ff561d;
+	color: #0465b5;
 	letter-spacing: 0.5px;
 	font-weight: 700;
 	-webkit-transition: all 400ms ease-out;
@@ -4649,44 +4649,46 @@ blockquote::after,
 
 /*  -----------------------  */
 
-.it-school .content-wrapper {
+.content {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 20px;
-}
-
-.it-school  .animation-wrapper {
+  }
+  
+  .animation-wrapper {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-}
-
-.it-school .text-block {
+	justify-content: space-between;
+  }
+  
+  .text-block {
 	flex: 1;
 	padding: 20px;
-}
-
-.it-school .text-block__title {
+  }
+  
+  .text-block__title {
 	font-size: 28px;
 	font-weight: bold;
 	margin-bottom: 10px;
-}
-
-.it-school .text-block p {
+  }
+  
+  .text-block p {
 	color: #555;
 	font-size: 16px;
 	line-height: 1.5;
-}
-
-.it-school .image-block {
+  }
+  
+  .image-block {
 	flex: 1;
 	display: flex;
-	justify-content: center;
-}
-
-.it-school .image-block img {
+	justify-content: flex-end;
+  }
+  
+  .image-block img {
 	max-width: 100%;
 	height: auto;
-	border-radius: 10px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+	/* border-radius: 10px; */
+	/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  }
+  

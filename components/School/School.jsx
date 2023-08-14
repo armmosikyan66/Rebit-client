@@ -1,23 +1,17 @@
 import Image from 'next/image'
-import ItSchhool from '@/assets/img/itschool.png'
-import Team2 from '@/assets/img/team/team-2.jpg'
-import Team3 from '@/assets/img/team/team-3.jpg'
-import Team4 from '@/assets/img/team/team-3.jpg'
-import { useEffect, useState } from 'react'
-// JavaScript code (you should include this in your project)
+import ItSchhool from '@/assets/img/choose-1.jpg'
 
-// Function to check if an element is in the viewport
+
 
 export default function School() {
-  const [animate, setAnimate] = useState(false)
 
   return (
     <div id="it-school" className="it-school">
-      <div className="content-wrapper">
+      <div className="content">
         <div className="animation-wrapper">
           <div className="text-block">
             <div className="text-block__title">
-              <span>IT School</span>
+              <span >IT School</span>
             </div>
             <p>
               Our web applications aren't just lines of code; they are gateways
@@ -29,7 +23,7 @@ export default function School() {
             </p>
           </div>
           <div className="image-block">
-            <Image src={ItSchhool} alt="IT School" />
+            <Image src={ItSchhool} alt="IT School" height={500}/>
           </div>
         </div>
       </div>

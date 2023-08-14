@@ -68,7 +68,7 @@ function ContactUs() {
       }
 
       if (formData.phone && !validatePhone(formData.phone)) {
-        newErrors.phone = 'Invalid phone format. Use format: +374********'
+        newErrors.phone = 'Invalid phone format.'
       }
 
       if (!newErrors.name && !newErrors.email && !newErrors.message) {
@@ -122,7 +122,10 @@ function ContactUs() {
                 <div id="contact-form" className="contact-form form">
                   <div className="row">
                     <div className="col-lg-6 col-md-6">
-                      <div className="form-group ">
+                      <div
+                        className="form-group "
+                        style={{ marginBottom: errors.name ? 20 : 0 }}
+                      >
                         <input
                           type="text"
                           name="name"
@@ -153,7 +156,10 @@ function ContactUs() {
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-6">
-                      <div className="form-group">
+                      <div
+                        className="form-group"
+                        style={{ marginBottom: errors.email ? 20 : 0 }}
+                      >
                         <input
                           type="email"
                           name="email"
@@ -172,7 +178,10 @@ function ContactUs() {
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-6">
-                      <div className="form-group">
+                      <div
+                        className="form-group"
+                        style={{ marginBottom: errors.phone ? 20 : 50 }}
+                      >
                         <input
                           type="text"
                           name="phone"
@@ -192,7 +201,10 @@ function ContactUs() {
                     </div>
 
                     <div className="col-lg-12 col-md-12">
-                      <div className="form-group">
+                      <div
+                        className="form-group"
+                        style={{ marginBottom: errors.message ? 20 : 20 }}
+                      >
                         <textarea
                           name="message"
                           className={`form-control ${

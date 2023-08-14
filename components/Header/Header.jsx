@@ -32,8 +32,16 @@ const useScrollSticky = () => {
 }
 
 export default function Header({ route }) {
+
   console.log('route in header', route)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toContacts = () => {
+    const navbar = document.getElementsByClassName("navbar-area")[0];
+    const contacts = document.getElementsByClassName('contact-section')[0]
+    const rect = contacts.getBoundingClientRect().top - navbar.clientHeight;
+    window.scrollTo({ top: rect, behavior: "smooth" });
+  }
 
 
   const isSticky = useScrollSticky()
@@ -82,12 +90,12 @@ export default function Header({ route }) {
             >
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link href="/" className="nav-link nav-linkk">
+                  <Link href="/" className="nav-link nav-linkk" style={route === '/' ? {color: '#048dff'} : {}}>
                     Home
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="#" className="nav-link nav-linkk">
+                  <Link href="#" style={route === '/aboutus' || route === '/team' || route === '/careers' ? {color: '#048dff'} : {}} className="nav-link nav-linkk">
                     Company <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
@@ -113,10 +121,7 @@ export default function Header({ route }) {
                 </li>
                 <li className="nav-item">
                   {' '}
-                  {/* <Link href="#" className="nav-link nav-linkk">
-                    Services <i className="fas fa-chevron-down"></i>
-                  </Link> */}
-                  <Link href="/services" className="nav-link nav-linkk">
+                  <Link href="/services" id='services' style={route === '/services' ? {color: '#048dff'} : {}} className={"nav-link nav-linkk"}>
                     Services <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
@@ -162,7 +167,7 @@ export default function Header({ route }) {
                 </li>
                 <li className="nav-item">
                   {' '}
-                  <Link href="#" className="nav-link nav-linkk">
+                  <Link href="#" style={route === '/ourstartups' || route === '/ourprojects' ? {color: '#048dff'} : {}} className="nav-link nav-linkk">
                     Projects <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
@@ -182,26 +187,14 @@ export default function Header({ route }) {
                 </li>
                 <li className="nav-item">
                   {' '}
-                  <Link href="/itschool" className="nav-link nav-linkk">
+                  <Link href="/itschool" style={route === '/itschool' ? {color: '#048dff'} : {}} className="nav-link nav-linkk">
                     IT School
                   </Link>
                 </li>
-                <li className="nav-item">
-                  {' '}
-                  <Link href="/ourclients" className="nav-link nav-linkk">
-                    Our Clients
-                  </Link>
-                </li>
-                {/* <li className="nav-item">
-                  {' '}
-                  <Link href="/contact" className="nav-link nav-linkk">
-                    Contact Us
-                  </Link>
-                </li> */}
               </ul>
               <div className="other-option">
                 {' '}
-                <Link className="default-btn" href="mailto:demo@example.com">
+                <Link className="default-btn" onClick={toContacts} href={'#contacts'}>
                   Contact Us
                   <span></span>
                 </Link>

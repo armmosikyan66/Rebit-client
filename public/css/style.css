@@ -108,7 +108,7 @@ ul {
 }
 
 .bg-grey {
-	background-color: #fafbfc;
+	background-color: #f1f7ff;
 }
 
 .section-padding {
@@ -4561,6 +4561,10 @@ blockquote::after,
 .nav-link.nav-linkk:focus {
 	color: #048dff !important;
 }
+
+/* .nav-link.nav-linkk.actives {
+	color: red !important;
+} */
 
 .stack-element {
 	padding: 20px 40px;

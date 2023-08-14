@@ -127,7 +127,7 @@ function Services() {
         <div className="content-wrapper">
           <div className="text-block">
             <div className="text-block__title">
-              <span>Work with AI Models – lorem ipsum</span>
+              <span>Work with AI Models</span>
             </div>
             <p>
               The blend of experience, skill, and proactive approach guarantees

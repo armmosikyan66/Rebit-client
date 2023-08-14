@@ -146,9 +146,14 @@ export default function Footer() {
             </div>
           </div>
         </div>
+        <div style={{color: 'white', textAlign: 'center'}}>
+        © 2023 Rebit.ai. All rights reserved.
+        </div>
+
       </section>
 
-	  <div className={`go-top ${isScrollActive ? 'active' : ''}`} onClick={scrollToTop}>
+
+	    <div className={`go-top ${isScrollActive ? 'active' : ''}`} onClick={scrollToTop}>
         <i className="fas fa-chevron-up"></i>
         <i className="fas fa-chevron-up"></i>
       </div>

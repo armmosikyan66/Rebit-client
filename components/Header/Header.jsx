@@ -222,25 +222,31 @@ export default function Header({ route }) {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="#" style={route === '/aboutus' || route === '/team' || route === '/careers' ? {color: '#048dff'} : {}} className="nav-link nav-linkk">
+                  <Link href="/company" style={route === '/company' ? {color: '#048dff'} : {}} className="nav-link nav-linkk">
                     Company <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       {' '}
-                      <Link href="/aboutus" className="nav-link nav-linkk">
+                      <Link href="/company/#aboutus" className="nav-link nav-linkk">
                         About Us
                       </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="/team" className="nav-link nav-linkk">
+                      <Link href="/company/#team" className="nav-link nav-linkk">
                         Team
                       </Link>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                       {' '}
-                      <Link href="/careers" className="nav-link nav-linkk">
+                      <Link href="/company/#careers" className="nav-link nav-linkk">
+                        Careers
+                      </Link>
+                    </li> */}
+                    <li className='nav-item'>
+                      {' '}
+                      <Link href='/company/#careers' className='nav-link nav-linkk'>
                         Careers
                       </Link>
                     </li>

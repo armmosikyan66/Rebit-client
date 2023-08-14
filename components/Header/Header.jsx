@@ -90,12 +90,12 @@ export default function Header({ route }) {
             >
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link href="/" className="nav-link nav-linkk">
+                  <Link href="/" className="nav-link nav-linkk" style={route === '/' ? {color: '#048dff'} : {}}>
                     Home
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="#" className="nav-link nav-linkk">
+                  <Link href="#" style={route === '/aboutus' || route === '/team' || route === '/careers' ? {color: '#048dff'} : {}} className="nav-link nav-linkk">
                     Company <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
@@ -121,7 +121,7 @@ export default function Header({ route }) {
                 </li>
                 <li className="nav-item">
                   {' '}
-                  <Link href="/services" id='services' className="nav-link nav-linkk">
+                  <Link href="/services" id='services' style={route === '/services' ? {color: '#048dff'} : {}} className={"nav-link nav-linkk"}>
                     Services <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
@@ -167,7 +167,7 @@ export default function Header({ route }) {
                 </li>
                 <li className="nav-item">
                   {' '}
-                  <Link href="#" className="nav-link nav-linkk">
+                  <Link href="#" style={route === '/ourstartups' || route === '/ourprojects' ? {color: '#048dff'} : {}} className="nav-link nav-linkk">
                     Projects <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
@@ -187,7 +187,7 @@ export default function Header({ route }) {
                 </li>
                 <li className="nav-item">
                   {' '}
-                  <Link href="/itschool" className="nav-link nav-linkk">
+                  <Link href="/itschool" style={route === '/itschool' ? {color: '#048dff'} : {}} className="nav-link nav-linkk">
                     IT School
                   </Link>
                 </li>

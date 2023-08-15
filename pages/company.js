@@ -118,7 +118,7 @@ function Company() {
         </div>
       </section>
 
-      <div id="careersss">Careers</div>
+      {/* <div id="careersss">Careers</div> */}
     </>
   );
 }

@@ -28,23 +28,28 @@ const useScrollSticky = () => {
     }
   }, [])
 
-  return isSticky
+  return isSticky;
 }
 
 export default function Header({ route }) {
 
-  console.log('route in header', route)
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  console.log('route in header', route);
+
+  const [opened, setOpened] = useState(false);
+  const [menuCompany, setMenuCompany] = useState(false);
+  const [menuServices, setMenuServices] = useState(false);
+  const [menuProjects, setMenuProjects] = useState(false);
 
   const toContacts = () => {
     const navbar = document.getElementsByClassName("navbar-area")[0];
-    const contacts = document.getElementsByClassName('contact-section')[0]
+    const contacts = document.getElementsByClassName('contact-section')[0];
     const rect = contacts.getBoundingClientRect().top + window.pageYOffset - navbar.clientHeight;
     window.scrollTo({ top: rect, behavior: "smooth" });
   }
 
 
-  const isSticky = useScrollSticky()
+  const isSticky = useScrollSticky();
+
   return (
     <div id='navbar' className={`navbar-area ${isSticky ? 'is-sticky' : ''}`}>
       <div className="techvio-responsive-nav">
@@ -71,120 +76,87 @@ export default function Header({ route }) {
               top: 0,
               color: "white"
             }} className="mean-bar">
-              <a href="#nav" className="meanmenu-reveal">
+              <a href="#nav" className={`meanmenu-reveal ${opened ? 'meanclose' : ''}`} onClick={() => setOpened(prev => !prev)}>
                 <span style={{background: isSticky ? "black" : "white"}}></span>
                 <span style={{background: isSticky ? "black" : "white"}}></span>
                 <span style={{background: isSticky ? "black" : "white"}}></span>
               </a>
               <nav className="mean-nav">
-                <ul className="navbar-nav" style={{display: "none"}}>
+                <ul className="navbar-nav" style={opened ? {display: 'flex'} : {display: "none"}}>
                   <li className="nav-item">
-                    <a href="index.html" className="nav-link">Home <i className="fas fa-chevron-down"></i></a>
-                    <ul className="dropdown-menu" style={{display: "none"}}>
-                      <li className="nav-item">
-                        <a href="index.html" className="nav-link">Home 1</a>
+                    <Link href="#" className="nav-link">Home <i className="fas fa-chevron-down"></i></Link>
+                  </li>
+                  <li className="nav-item" onClick={() => setMenuCompany(prev => !prev)} ><a className="nav-link">
+                    Company
+                    <i className="fas fa-chevron-down"></i>
+                  </a>
+                    <ul className="dropdown-menu" style={menuCompany ? {display: 'block'} : {display: "none"}}>
+                      <li className="nav-item"><Link href="/company/#aboutus" className="nav-link">
+                        About Us
+                      </Link>
                       </li>
-                      <li className="nav-item">
-                        <a href="index-2.html" className="nav-link">Home 2</a>
+                      <li className="nav-item"><Link href="/company/#team" className="nav-link">
+                        Team
+                      </Link>
+                      </li>
+                      <li className="nav-item"><Link href="/company/#careers" className="nav-link">
+                        Careers
+                      </Link>
                       </li>
                     </ul>
                     <a className="mean-expand" href="#" style={{fontSize: 18}}>+</a></li>
-                  <li className="nav-item"><a href="about.html" className="nav-link">
-                    About Us
-                  </a>
-                  </li>
-                  <li className="nav-item"><a href="#" className="nav-link">
+                  <li className="nav-item" onClick={() => setMenuServices(prev => !prev)}><a href="#" className="nav-link">
                     Services
                     <i className="fas fa-chevron-down"></i>
                   </a>
-                    <ul className="dropdown-menu" style={{display: "none"}}>
-                      <li className="nav-item"><a href="services.html" className="nav-link">
-                        Services
-                      </a>
+                    <ul className="dropdown-menu" style={menuServices ? {display: 'block'} : {display: "none"}}>
+                      <li className="nav-item"><Link href='/services/#webdevelopment' className="nav-link">
+                        Web Development
+                      </Link>
                       </li>
-                      <li className="nav-item"><a href="single-services.html" className="nav-link">
-                        Services Details
-                      </a>
+                      <li className="nav-item"><Link href="/services/#mobileapp" className="nav-link">
+                        Mobile App
+                      </Link>
+                      </li>
+                      <li className="nav-item"><Link href="/services/#aimodels" className="nav-link">
+                        AI Models
+                      </Link>
+                      </li>
+                      <li className="nav-item"><Link href="/services/#devops" className="nav-link">
+                        Devops
+                      </Link>
+                      </li>
+                      <li className="nav-item"><Link href="/services/#consulting" className="nav-link">
+                        Consulting
+                      </Link>
+                      </li>
+                      <li className="nav-item"><Link href="/services/#uiux" className="nav-link">
+                        UI/UX
+                      </Link>
                       </li>
                     </ul>
                     <a className="mean-expand" href="#" style={{fontSize: 18}}>+</a></li>
-                  <li className="nav-item"><a href="#" className="nav-link active">
+                  <li className="nav-item" onClick={() => setMenuProjects(prev => !prev)}><a href="#" className="nav-link">
                     Projects
                     <i className="fas fa-chevron-down"></i>
                   </a>
-                    <ul className="dropdown-menu" style={{display: "none"}}>
-                      <li className="nav-item"><a href="projects.html" className="nav-link active">
-                        Projects
-                      </a>
+                    <ul className="dropdown-menu" style={menuProjects ? {display: 'block'} : {display: "none"}}>
+                      <li className="nav-item"><Link href="/ourprojects" className="nav-link">
+                        Our Projects
+                      </Link>
                       </li>
-                      <li className="nav-item"><a href="single-projects.html" className="nav-link">
-                        Projects Details
-                      </a>
+                      <li className="nav-item"><Link href="/ourstartups" className="nav-link">
+                        Our Startups
+                      </Link>
                       </li>
                     </ul>
                     <a className="mean-expand" href="#" style={{fontSize: 18}}>+</a></li>
+                  
                   <li className="nav-item"><a href="#" className="nav-link">
-                    Pages
+                    IT School
                     <i className="fas fa-chevron-down"></i>
                   </a>
-                    <ul className="dropdown-menu" style={{display: "none"}}>
-                      <li className="nav-item"><a href="about.html" className="nav-link">
-                        About Us
-                      </a>
-                      </li>
-                      <li className="nav-item"><a href="team.html" className="nav-link">
-                        Team
-                      </a>
-                      </li>
-                      <li className="nav-item"><a href="pricing.html" className="nav-link">
-                        Pricing
-                      </a>
-                      </li>
-                      <li className="nav-item"><a href="error-404.html" className="nav-link">
-                        404 Error
-                      </a>
-                      </li>
-                      <li className="nav-item"><a href="faq.html" className="nav-link">
-                        FAQ
-                      </a>
-                      </li>
-                      <li className="nav-item"><a href="coming-soon.html" className="nav-link">
-                        Coming Soon
-                      </a>
-                      </li>
-                      <li className="nav-item"><a href="terms-condition.html" className="nav-link">
-                        Terms &amp; Conditions
-                      </a>
-                      </li>
-                      <li className="nav-item"><a href="privacy-policy.html" className="nav-link">
-                        Privacy Policy
-                      </a>
-                      </li>
-                    </ul>
-                    <a className="mean-expand" href="#" style={{fontSize: 18}}>+</a></li>
-                  <li className="nav-item"><a href="#" className="nav-link">
-                    Blog
-                    <i className="fas fa-chevron-down"></i>
-                  </a>
-                    <ul className="dropdown-menu" style={{display: "none"}}>
-                      <li className="nav-item"><a href="blog-1.html" className="nav-link">
-                        Blog Grid
-                      </a>
-                      </li>
-                      <li className="nav-item"><a href="blog-2.html" className="nav-link">
-                        Blog Right Sidebar
-                      </a>
-                      </li>
-                      <li className="nav-item"><a href="single-blog.html" className="nav-link">
-                        Blog Details
-                      </a>
-                      </li>
-                    </ul>
-                    <a className="mean-expand" href="#" style={{fontSize: 18}}>+</a></li>
-                  <li className="nav-item mean-last"><a href="contact.html" className="nav-link">
-                    Contact
-                  </a>
-                  </li>
+                    </li>
                 </ul>
                 <div className="other-option"><a className="default-btn" href="mailto:demo@example.com">
                   Get It Support
@@ -211,7 +183,7 @@ export default function Header({ route }) {
             </Link>
             <div
               className={`collapse navbar-collapse mean-menu ${
-                isMenuOpen ? 'show' : ''
+                opened ? 'show' : ''
               }`}
               id="navbarSupportedContent"
             >
@@ -238,12 +210,6 @@ export default function Header({ route }) {
                         Team
                       </Link>
                     </li>
-                    {/* <li className="nav-item">
-                      {' '}
-                      <Link href="/company/#careers" className="nav-link nav-linkk">
-                        Careers
-                      </Link>
-                    </li> */}
                     <li className='nav-item'>
                       {' '}
                       <Link href='/company/#careers' className='nav-link nav-linkk'>
@@ -301,7 +267,7 @@ export default function Header({ route }) {
                 <li className="nav-item">
                   {' '}
                   <Link href="#" style={route === '/ourstartups' || route === '/ourprojects' ? {color: '#048dff'} : {}} className="nav-link nav-linkk">
-                    Projects <i className="fas fa-chevron-down"></i>
+                    Projects<i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
                     <li className="nav-item">

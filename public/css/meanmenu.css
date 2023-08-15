@@ -24,7 +24,7 @@ a.meanmenu-reveal {
 }
 
 .mean-container a.meanmenu-reveal {
-	width: 35px;
+	width: 30px;
 	height: 30px;
 	position: absolute;
 	right: 0;
@@ -44,7 +44,7 @@ a.meanmenu-reveal {
 	display: block;
 	background: #000000;
 	height: 4px;
-    margin-top: 3px;
+    margin-top: 6px;
     border-radius: 3px;
 }
 

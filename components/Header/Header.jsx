@@ -90,7 +90,7 @@ export default function Header({ route }) {
                     Company
                     <i className="fas fa-chevron-down"></i>
                   </a>
-                    <ul className="dropdown-menu" style={menuCompany ? {display: 'block'} : {display: "none"}}>
+                    <ul className={`dropdown-menu ${menuCompany ? 'opened-dropdown' : ''}`} style={menuCompany ? {display: 'block'} : {display: "none"}}>
                       <li className="nav-item"><Link href="/company/#aboutus" className="nav-link">
                         About Us
                       </Link>
@@ -104,7 +104,7 @@ export default function Header({ route }) {
                       </Link>
                       </li>
                     </ul>
-                    <a className="mean-expand" href="#" style={{fontSize: 18}}>+</a></li>
+                    <a className="mean-expand" href="#" style={{fontSize: 18}}>{menuCompany ? '-' : '+'}</a></li>
                   <li className="nav-item" onClick={() => setMenuServices(prev => !prev)}><a href="#" className="nav-link">
                     Services
                     <i className="fas fa-chevron-down"></i>
@@ -135,7 +135,7 @@ export default function Header({ route }) {
                       </Link>
                       </li>
                     </ul>
-                    <a className="mean-expand" href="#" style={{fontSize: 18}}>+</a></li>
+                    <a className="mean-expand" href="#" style={{fontSize: 18}}>{menuServices ? '-' : '+'}</a></li>
                   <li className="nav-item" onClick={() => setMenuProjects(prev => !prev)}><a href="#" className="nav-link">
                     Projects
                     <i className="fas fa-chevron-down"></i>
@@ -150,12 +150,12 @@ export default function Header({ route }) {
                       </Link>
                       </li>
                     </ul>
-                    <a className="mean-expand" href="#" style={{fontSize: 18}}>+</a></li>
+                    <a className="mean-expand" href="#" style={{fontSize: 18}}>{menuProjects ? '-' : '+'}</a></li>
                   
-                  <li className="nav-item"><a href="#" className="nav-link">
+                  <li className="nav-item"><Link href="/itschool" className="nav-link">
                     IT School
                     <i className="fas fa-chevron-down"></i>
-                  </a>
+                  </Link>
                     </li>
                 </ul>
                 <div className="other-option"><a className="default-btn" href="mailto:demo@example.com">

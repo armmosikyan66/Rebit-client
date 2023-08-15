@@ -1,23 +1,28 @@
 import Image from 'next/image';
-import About from '../../assets/img/about.jpg';
+import About from '../../assets/img/Logo/LogoMark_color.png';
 
 export default function AboutCompany() {
 
   return (
     <section className="about-area section-padding">
         <div className="container">
+        <div className="row">
+          <div className="col-sm-12">
+            <div className="section-title">
+              {/* <h6>What We Provide</h6> */}
+              <h2>About Rebit</h2>
+            </div>
+          </div>
+        </div>
           <div className="row d-flex align-items-center">
             <div className="col-lg-6 col-md-12 col-sm-12">
               <div className="about-content">
                 <div className="about-content-text">
-                  <h6>About Our Company</h6>
                   <h2>
-                  Rebit.ai is a software development company that offers innovative solutions to help businesses achieve their goals.                                                                     
+                    Innovative software solutions for business success.                                                                     
                   </h2>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua enim ad minim veniam, nostrud
+                    Rebit.ai is a software development company that offers innovative solutions to help businesses achieve their goals.
                   </p>
                   {/* <div className="skills"> */}
                     {/* <div className="skill-item">
@@ -59,10 +64,6 @@ export default function AboutCompany() {
             <div className="col-lg-5 offset-lg-1 col-md-12 col-sm-12">
               <div className="about-image">
                 <Image src={About} alt="About" />
-                <div className="years-design">
-                  <h2>5</h2>
-                  <h5>Years Experience</h5>
-                </div>
               </div>
             </div>
           </div>

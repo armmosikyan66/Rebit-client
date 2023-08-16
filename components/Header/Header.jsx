@@ -1,68 +1,68 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import Image from 'next/image'
-import Logo from '@/assets/img/Logo/Logo_mono_white.png'
-import LogoBlack from '@/assets/img/Logo/Logo_mono_dark.png'
-import { useEffect, useState } from 'react'
+import Link from "next/link";
+import Image from "next/image";
+import Logo from "@/assets/img/Logo/Logo_mono_white.png";
+import LogoBlack from "@/assets/img/Logo/Logo_mono_dark.png";
+import { useEffect, useState } from "react";
 
 const useScrollSticky = () => {
-  const [isSticky, setIsSticky] = useState(false)
+  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     // Function to handle the scroll event
     const handleScroll = () => {
-      const scrollY = window.scrollY
+      const scrollY = window.scrollY;
       // You can adjust the threshold value (e.g., 100) to change when the class is added
-      setIsSticky(scrollY > 89)
-    }
+      setIsSticky(scrollY > 89);
+    };
 
     // Check if window is defined before adding the scroll event listener
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', handleScroll)
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
 
       // Remove the scroll event listener when the component unmounts
       return () => {
-        window.removeEventListener('scroll', handleScroll)
-      }
+        window.removeEventListener("scroll", handleScroll);
+      };
     }
-  }, [])
+  }, []);
 
-  return isSticky
-}
+  return isSticky;
+};
 
 export default function Header({ route }) {
-  console.log('route in header', route)
+  console.log("route in header", route);
 
-  const [opened, setOpened] = useState(false)
+  const [opened, setOpened] = useState(false);
 
   const [menuServices, setMenuServices] = useState({
     opened: false,
     checked: false,
-  })
-  const [menuProjects, setMenuProjects] = useState(false)
+  });
+  const [menuProjects, setMenuProjects] = useState(false);
 
   const toContacts = () => {
-    const navbar = document.getElementsByClassName('navbar-area')[0]
-    const contacts = document.getElementsByClassName('contact-section')[0]
+    const navbar = document.getElementsByClassName("navbar-area")[0];
+    const contacts = document.getElementsByClassName("contact-section")[0];
     const rect =
       contacts.getBoundingClientRect().top +
       window.pageYOffset -
-      navbar.clientHeight
-    window.scrollTo({ top: rect, behavior: 'smooth' })
-  }
+      navbar.clientHeight;
+    window.scrollTo({ top: rect, behavior: "smooth" });
+  };
 
-  const isSticky = useScrollSticky()
-  const [menuCompany, setMenuCompany] = useState({ opened: false })
+  const isSticky = useScrollSticky();
+  const [menuCompany, setMenuCompany] = useState({ opened: false });
 
   const toggleDropdown = () => {
     setMenuCompany((prevState) => ({
       opened: !prevState.opened,
-    }))
-  }
+    }));
+  };
 
   return (
-    <div id="navbar" className={`navbar-area ${isSticky ? 'is-sticky' : ''}`}>
+    <div id="navbar" className={`navbar-area ${isSticky ? "is-sticky" : ""}`}>
       <div className="techvio-responsive-nav">
         <div className="container">
           <div className="techvio-responsive-menu mean-container">
@@ -86,29 +86,46 @@ export default function Header({ route }) {
               style={{
                 left: 0,
                 top: 0,
-                color: 'white',
+                color: "white",
               }}
               className="mean-bar"
             >
               <a
                 href="#nav"
-                className={`meanmenu-reveal ${opened ? 'meanclose' : ''}`}
+                className={`meanmenu-reveal ${opened ? "meanclose" : ""}`}
                 onClick={() => setOpened((prev) => !prev)}
               >
                 <span
-                  style={{ background: isSticky ? 'black' : 'white' }}
+                  style={{
+                    background: isSticky ? "black" : "white",
+                    transformOrigin: opened ? "0% 0%" : null,
+                    transition: opened ? "transform 0.4s ease-in-out" : null,
+                    transform: opened ? "rotate(45deg)" : null,
+                  }}
+                  className="meanclose__firstLine"
                 ></span>
                 <span
-                  style={{ background: isSticky ? 'black' : 'white' }}
+                  style={{
+                    background: isSticky ? "black" : "white",
+                    transition: opened ? "transform 0.2s ease-in-out" : null,
+                    transform: opened ? "scaleY(0)" : null,
+                  }}
+                  className="meanclose__secondLIne"
                 ></span>
                 <span
-                  style={{ background: isSticky ? 'black' : 'white' }}
+                  style={{
+                    background: isSticky ? "black" : "white",
+                    transformOrigin: opened ? "0% 100%" : null,
+                    transition: opened ? "transform 0.4s ease-in-out" : null,
+                    transform: opened ? "rotate(-45deg)" : null,
+                  }}
+                  className="meanclose__thirthLine"
                 ></span>
               </a>
               <nav className="mean-nav">
                 <ul
                   className="navbar-nav"
-                  style={opened ? { display: 'flex' } : { display: 'none' }}
+                  style={opened ? { display: "flex" } : { display: "none" }}
                 >
                   <li className="nav-item ">
                     <Link href="#" className="nav-link">
@@ -122,7 +139,9 @@ export default function Header({ route }) {
                     </a>
                     <ul
                       className={`dropdown-menu ${
-                        menuCompany.opened ? 'opened-dropdown' : 'closed-dropdown'
+                        menuCompany.opened
+                          ? "opened-dropdown"
+                          : "closed-dropdown"
                       } `}
                     >
                       <li className="nav-item">
@@ -147,7 +166,7 @@ export default function Header({ route }) {
                       style={{ fontSize: 18 }}
                       onClick={toggleDropdown}
                     >
-                      {menuCompany.opened ? '-' : '+'}
+                      {menuCompany.opened ? "-" : "+"}
                     </a>
                   </li>
                   <li
@@ -166,10 +185,10 @@ export default function Header({ route }) {
                     <ul
                       className={`dropdown-menu ${
                         menuServices.opened
-                          ? 'opened-dropdown'
+                          ? "opened-dropdown"
                           : !menuServices.opened
-                          ? 'closed-dropdown'
-                          : ''
+                          ? "closed-dropdown"
+                          : ""
                       }`}
                       // style={
                       //   menuServices
@@ -216,7 +235,7 @@ export default function Header({ route }) {
                       href="#"
                       style={{ fontSize: 18 }}
                     >
-                      {menuServices.opened ? '-' : '+'}
+                      {menuServices.opened ? "-" : "+"}
                     </a>
                   </li>
                   <li
@@ -270,7 +289,7 @@ export default function Header({ route }) {
             </Link>
             <div
               className={`collapse navbar-collapse mean-menu ${
-                opened ? 'show' : ''
+                opened ? "show" : ""
               }`}
               id="navbarSupportedContent"
             >
@@ -279,7 +298,7 @@ export default function Header({ route }) {
                   <Link
                     href="/"
                     className="nav-link nav-linkk"
-                    style={route === '/' ? { color: '#048dff' } : {}}
+                    style={route === "/" ? { color: "#048dff" } : {}}
                   >
                     Home
                   </Link>
@@ -287,14 +306,14 @@ export default function Header({ route }) {
                 <li className="nav-item">
                   <Link
                     href="/company"
-                    style={route === '/company' ? { color: '#048dff' } : {}}
+                    style={route === "/company" ? { color: "#048dff" } : {}}
                     className="nav-link nav-linkk"
                   >
                     Company <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/company/#aboutus"
                         className="nav-link nav-linkk"
@@ -303,7 +322,7 @@ export default function Header({ route }) {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/company/#team"
                         className="nav-link nav-linkk"
@@ -312,7 +331,7 @@ export default function Header({ route }) {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/company/#careers"
                         className="nav-link nav-linkk"
@@ -323,18 +342,18 @@ export default function Header({ route }) {
                   </ul>
                 </li>
                 <li className="nav-item">
-                  {' '}
+                  {" "}
                   <Link
                     href="/services"
                     id="services"
-                    style={route === '/services' ? { color: '#048dff' } : {}}
-                    className={'nav-link nav-linkk'}
+                    style={route === "/services" ? { color: "#048dff" } : {}}
+                    className={"nav-link nav-linkk"}
                   >
                     Services <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/services/#webdevelopment"
                         className="nav-link nav-linkk"
@@ -343,7 +362,7 @@ export default function Header({ route }) {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/services/#mobileapp"
                         className="nav-link nav-linkk"
@@ -352,7 +371,7 @@ export default function Header({ route }) {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/services/#aimodels"
                         className="nav-link nav-linkk"
@@ -361,7 +380,7 @@ export default function Header({ route }) {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/services/#devops"
                         className="nav-link nav-linkk"
@@ -370,7 +389,7 @@ export default function Header({ route }) {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/services/#consulting"
                         className="nav-link nav-linkk"
@@ -379,7 +398,7 @@ export default function Header({ route }) {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/services/#uiux"
                         className="nav-link nav-linkk"
@@ -390,27 +409,27 @@ export default function Header({ route }) {
                   </ul>
                 </li>
                 <li className="nav-item">
-                  {' '}
+                  {" "}
                   <Link href="/ourstartups" className="nav-link nav-linkk">
                     StartUps
                   </Link>
                 </li>
                 <li className="nav-item">
-                  {' '}
+                  {" "}
                   <Link href="/ourprojects" className="nav-link nav-linkk">
                     Portfolio
                   </Link>
                 </li>
 
                 <li className="nav-item">
-                  {' '}
+                  {" "}
                   <Link href="/itschool" className="nav-link nav-linkk">
                     IT School
                   </Link>
                 </li>
               </ul>
               <div className="other-option">
-                {' '}
+                {" "}
                 <button className="default-btn" onClick={toContacts}>
                   Contact Us
                   <span></span>
@@ -421,5 +440,5 @@ export default function Header({ route }) {
         </div>
       </div>
     </div>
-  )
+  );
 }

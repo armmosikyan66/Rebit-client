@@ -5322,8 +5322,13 @@ blockquote::after,
 }
 
 .startup-modal__container p > a {
+
   color: #4a46cb;
 }
 
 @media (max-width: 991px) {
+}
+
+    color: #4A46CB;
+}
 }

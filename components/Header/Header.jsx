@@ -1,53 +1,67 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import Image from 'next/image'
-import Logo from '@/assets/img/Logo/Logo_mono_white.png'
-import LogoBlack from '@/assets/img/Logo/Logo_mono_dark.png'
-import { useEffect, useState } from 'react'
+import Link from "next/link";
+import Image from "next/image";
+import Logo from "@/assets/img/Logo/Logo_mono_white.png";
+import LogoBlack from "@/assets/img/Logo/Logo_mono_dark.png";
+import { useEffect, useState } from "react";
 
 const useScrollSticky = () => {
-  const [isSticky, setIsSticky] = useState(false)
+  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     // Function to handle the scroll event
     const handleScroll = () => {
-      const scrollY = window.scrollY
+      const scrollY = window.scrollY;
       // You can adjust the threshold value (e.g., 100) to change when the class is added
-      setIsSticky(scrollY > 89)
-    }
+      setIsSticky(scrollY > 89);
+    };
 
     // Check if window is defined before adding the scroll event listener
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', handleScroll)
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
 
       // Remove the scroll event listener when the component unmounts
       return () => {
-        window.removeEventListener('scroll', handleScroll)
-      }
+        window.removeEventListener("scroll", handleScroll);
+      };
     }
-  }, [])
+  }, []);
 
-  return isSticky
-}
+  return isSticky;
+};
 
 export default function Header({ route }) {
-  console.log('route in header', route)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const [opened, setOpened] = useState(false);
+
+  const [menuServices, setMenuServices] = useState({
+    opened: false,
+    checked: false,
+  });
+  const [menuProjects, setMenuProjects] = useState(false);
 
   const toContacts = () => {
-    const navbar = document.getElementsByClassName('navbar-area')[0]
-    const contacts = document.getElementsByClassName('contact-section')[0]
+    const navbar = document.getElementsByClassName("navbar-area")[0];
+    const contacts = document.getElementsByClassName("contact-section")[0];
     const rect =
       contacts.getBoundingClientRect().top +
       window.pageYOffset -
-      navbar.clientHeight
-    window.scrollTo({ top: rect, behavior: 'smooth' })
-  }
+      navbar.clientHeight;
+    window.scrollTo({ top: rect, behavior: "smooth" });
+  };
 
-  const isSticky = useScrollSticky()
+  const isSticky = useScrollSticky();
+  const [menuCompany, setMenuCompany] = useState({ opened: false });
+
+  const toggleDropdown = () => {
+    setMenuCompany((prevState) => ({
+      opened: !prevState.opened,
+    }));
+  };
+
   return (
-    <div id="navbar" className={`navbar-area ${isSticky ? 'is-sticky' : ''}`}>
+    <div id="navbar" className={`navbar-area ${isSticky ? "is-sticky" : ""}`}>
       <div className="techvio-responsive-nav">
         <div className="container">
           <div className="techvio-responsive-menu mean-container">
@@ -71,67 +85,148 @@ export default function Header({ route }) {
               style={{
                 left: 0,
                 top: 0,
-                color: 'white',
+                color: "white",
               }}
               className="mean-bar"
             >
-              <a href="#nav" className="meanmenu-reveal">
+              <a
+                href="#nav"
+                className={`meanmenu-reveal ${opened ? "meanclose" : ""}`}
+                onClick={() => setOpened((prev) => !prev)}
+              >
                 <span
-                  style={{ background: isSticky ? 'black' : 'white' }}
+                  style={{
+                    background: isSticky ? "black" : "white",
+                    transformOrigin: opened ? "0% 0%" : null,
+                    transition: opened ? "transform 0.4s ease-in-out" : null,
+                    transform: opened ? "rotate(45deg)" : null,
+                  }}
+                  className="meanclose__firstLine"
                 ></span>
                 <span
-                  style={{ background: isSticky ? 'black' : 'white' }}
+                  style={{
+                    background: isSticky ? "black" : "white",
+                    transition: opened ? "transform 0.2s ease-in-out" : null,
+                    transform: opened ? "scaleY(0)" : null,
+                  }}
+                  className="meanclose__secondLIne"
                 ></span>
                 <span
-                  style={{ background: isSticky ? 'black' : 'white' }}
+                  style={{
+                    background: isSticky ? "black" : "white",
+                    transformOrigin: opened ? "0% 100%" : null,
+                    transition: opened ? "transform 0.4s ease-in-out" : null,
+                    transform: opened ? "rotate(-45deg)" : null,
+                  }}
+                  className="meanclose__thirthLine"
                 ></span>
               </a>
               <nav className="mean-nav">
-                <ul className="navbar-nav" style={{ display: 'none' }}>
-                  <li className="nav-item">
-                    <a href="index.html" className="nav-link">
+                <ul
+                  className="navbar-nav"
+                  style={opened ? { display: "flex" } : { display: "none" }}
+                >
+                  <li className="nav-item ">
+                    <Link href="#" className="nav-link">
                       Home <i className="fas fa-chevron-down"></i>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" onClick={toggleDropdown}>
+                      Company
+                      <i className="fas fa-chevron-down"></i>
                     </a>
-                    <ul className="dropdown-menu" style={{ display: 'none' }}>
+                    <ul
+                      className={`dropdown-menu ${
+                        menuCompany.opened
+                          ? "opened-dropdown"
+                          : "closed-dropdown"
+                      } `}
+                    >
                       <li className="nav-item">
-                        <a href="index.html" className="nav-link">
-                          Home 1
-                        </a>
+                        <Link href="/company/#aboutus" className="nav-link">
+                          About Us
+                        </Link>
                       </li>
                       <li className="nav-item">
-                        <a href="index-2.html" className="nav-link">
-                          Home 2
-                        </a>
+                        <Link href="/company/#team" className="nav-link">
+                          Team
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link href="/company/#careers" className="nav-link">
+                          Careers
+                        </Link>
                       </li>
                     </ul>
                     <a
                       className="mean-expand"
                       href="#"
                       style={{ fontSize: 18 }}
+                      onClick={toggleDropdown}
                     >
-                      +
+                      {menuCompany.opened ? "-" : "+"}
                     </a>
                   </li>
-                  <li className="nav-item">
-                    <a href="about.html" className="nav-link">
-                      About Us
-                    </a>
-                  </li>
-                  <li className="nav-item">
+                  <li
+                    className="nav-item"
+                    onClick={() =>
+                      setMenuServices({
+                        opened: !menuServices.opened,
+                        checked: true,
+                      })
+                    }
+                  >
                     <a href="#" className="nav-link">
                       Services
                       <i className="fas fa-chevron-down"></i>
                     </a>
-                    <ul className="dropdown-menu" style={{ display: 'none' }}>
+                    <ul
+                      className={`dropdown-menu ${
+                        menuServices.opened
+                          ? "opened-dropdown"
+                          : !menuServices.opened
+                          ? "closed-dropdown"
+                          : ""
+                      }`}
+                      // style={
+                      //   menuServices
+                      //     ? { display: 'block' }
+                      //     : { display: 'none' }
+                      // }
+                    >
                       <li className="nav-item">
-                        <a href="services.html" className="nav-link">
-                          Services
-                        </a>
+                        <Link
+                          href="/services/#webdevelopment"
+                          className="nav-link"
+                        >
+                          Web Development
+                        </Link>
                       </li>
                       <li className="nav-item">
-                        <a href="single-services.html" className="nav-link">
-                          Services Details
-                        </a>
+                        <Link href="/services/#mobileapp" className="nav-link">
+                          Mobile App
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link href="/services/#aimodels" className="nav-link">
+                          AI Models
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link href="/services/#devops" className="nav-link">
+                          Devops
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link href="/services/#consulting" className="nav-link">
+                          Consulting
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link href="/services/#uiux" className="nav-link">
+                          UI/UX
+                        </Link>
                       </li>
                     </ul>
                     <a
@@ -139,123 +234,33 @@ export default function Header({ route }) {
                       href="#"
                       style={{ fontSize: 18 }}
                     >
-                      +
+                      {menuServices.opened ? "-" : "+"}
                     </a>
                   </li>
-                  <li className="nav-item">
-                    <a href="#" className="nav-link active">
-                      Projects
+                  <li
+                    className="nav-item"
+                    onClick={() => setMenuProjects((prev) => !prev)}
+                  >
+                    <a href="/ourstartups" className="nav-link">
+                      StartUps
                       <i className="fas fa-chevron-down"></i>
                     </a>
-                    <ul className="dropdown-menu" style={{ display: 'none' }}>
-                      <li className="nav-item">
-                        <a href="projects.html" className="nav-link active">
-                          Projects
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="single-projects.html" className="nav-link">
-                          Projects Details
-                        </a>
-                      </li>
-                    </ul>
-                    <a
-                      className="mean-expand"
-                      href="#"
-                      style={{ fontSize: 18 }}
-                    >
-                      +
-                    </a>
                   </li>
-                  <li className="nav-item">
-                    <a href="#" className="nav-link">
-                      Pages
+                  <li
+                    className="nav-item"
+                    onClick={() => setMenuProjects((prev) => !prev)}
+                  >
+                    <a href="/ourprojects" className="nav-link">
+                      Portfolio
                       <i className="fas fa-chevron-down"></i>
                     </a>
-                    <ul className="dropdown-menu" style={{ display: 'none' }}>
-                      <li className="nav-item">
-                        <a href="about.html" className="nav-link">
-                          About Us
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="team.html" className="nav-link">
-                          Team
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="pricing.html" className="nav-link">
-                          Pricing
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="error-404.html" className="nav-link">
-                          404 Error
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="faq.html" className="nav-link">
-                          FAQ
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="coming-soon.html" className="nav-link">
-                          Coming Soon
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="terms-condition.html" className="nav-link">
-                          Terms &amp; Conditions
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="privacy-policy.html" className="nav-link">
-                          Privacy Policy
-                        </a>
-                      </li>
-                    </ul>
-                    <a
-                      className="mean-expand"
-                      href="#"
-                      style={{ fontSize: 18 }}
-                    >
-                      +
-                    </a>
                   </li>
+
                   <li className="nav-item">
-                    <a href="#" className="nav-link">
-                      Blog
+                    <Link href="/itschool" className="nav-link">
+                      IT School
                       <i className="fas fa-chevron-down"></i>
-                    </a>
-                    <ul className="dropdown-menu" style={{ display: 'none' }}>
-                      <li className="nav-item">
-                        <a href="blog-1.html" className="nav-link">
-                          Blog Grid
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="blog-2.html" className="nav-link">
-                          Blog Right Sidebar
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="single-blog.html" className="nav-link">
-                          Blog Details
-                        </a>
-                      </li>
-                    </ul>
-                    <a
-                      className="mean-expand"
-                      href="#"
-                      style={{ fontSize: 18 }}
-                    >
-                      +
-                    </a>
-                  </li>
-                  <li className="nav-item mean-last">
-                    <a href="contact.html" className="nav-link">
-                      Contact
-                    </a>
+                    </Link>
                   </li>
                 </ul>
                 <div className="other-option">
@@ -283,7 +288,7 @@ export default function Header({ route }) {
             </Link>
             <div
               className={`collapse navbar-collapse mean-menu ${
-                isMenuOpen ? 'show' : ''
+                opened ? "show" : ""
               }`}
               id="navbarSupportedContent"
             >
@@ -292,7 +297,7 @@ export default function Header({ route }) {
                   <Link
                     href="/"
                     className="nav-link nav-linkk"
-                    style={route === '/' ? { color: '#048dff' } : {}}
+                    style={route === "/" ? { color: "#048dff" } : {}}
                   >
                     Home
                   </Link>
@@ -300,14 +305,14 @@ export default function Header({ route }) {
                 <li className="nav-item">
                   <Link
                     href="/company"
-                    style={route === '/company' ? { color: '#048dff' } : {}}
+                    style={route === "/company" ? { color: "#048dff" } : {}}
                     className="nav-link nav-linkk"
                   >
                     Company <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/company/#aboutus"
                         className="nav-link nav-linkk"
@@ -316,7 +321,7 @@ export default function Header({ route }) {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/company/#team"
                         className="nav-link nav-linkk"
@@ -324,14 +329,8 @@ export default function Header({ route }) {
                         Team
                       </Link>
                     </li>
-                    {/* <li className="nav-item">
-                      {' '}
-                      <Link href="/company/#careers" className="nav-link nav-linkk">
-                        Careers
-                      </Link>
-                    </li> */}
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/company/#careers"
                         className="nav-link nav-linkk"
@@ -342,18 +341,18 @@ export default function Header({ route }) {
                   </ul>
                 </li>
                 <li className="nav-item">
-                  {' '}
+                  {" "}
                   <Link
                     href="/services"
                     id="services"
-                    style={route === '/services' ? { color: '#048dff' } : {}}
-                    className={'nav-link nav-linkk'}
+                    style={route === "/services" ? { color: "#048dff" } : {}}
+                    className={"nav-link nav-linkk"}
                   >
                     Services <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/services/#webdevelopment"
                         className="nav-link nav-linkk"
@@ -362,7 +361,7 @@ export default function Header({ route }) {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/services/#mobileapp"
                         className="nav-link nav-linkk"
@@ -371,7 +370,7 @@ export default function Header({ route }) {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/services/#aimodels"
                         className="nav-link nav-linkk"
@@ -380,7 +379,7 @@ export default function Header({ route }) {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/services/#devops"
                         className="nav-link nav-linkk"
@@ -389,7 +388,7 @@ export default function Header({ route }) {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/services/#consulting"
                         className="nav-link nav-linkk"
@@ -398,7 +397,7 @@ export default function Header({ route }) {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      {' '}
+                      {" "}
                       <Link
                         href="/services/#uiux"
                         className="nav-link nav-linkk"
@@ -409,42 +408,27 @@ export default function Header({ route }) {
                   </ul>
                 </li>
                 <li className="nav-item">
-                  {' '}
-                  <Link
-                    href="/ourstartups"
-                    
-                    className="nav-link nav-linkk"
-                  >
+                  {" "}
+                  <Link href="/ourstartups" className="nav-link nav-linkk">
                     StartUps
                   </Link>
-                  
                 </li>
-                
                 <li className="nav-item">
-                  {' '}
-                  <Link
-                    href="/ourprojects"
-                    
-                    className="nav-link nav-linkk"
-                  >
+                  {" "}
+                  <Link href="/ourprojects" className="nav-link nav-linkk">
                     Portfolio
                   </Link>
-                  
                 </li>
-                
+
                 <li className="nav-item">
-                  {' '}
-                  <Link
-                    href="/itschool"
-                    style={route === '/itschool' ? { color: '#048dff' } : {}}
-                    className="nav-link nav-linkk"
-                  >
+                  {" "}
+                  <Link href="/itschool" className="nav-link nav-linkk">
                     IT School
                   </Link>
                 </li>
               </ul>
               <div className="other-option">
-                {' '}
+                {" "}
                 <button className="default-btn" onClick={toContacts}>
                   Contact Us
                   <span></span>
@@ -455,5 +439,5 @@ export default function Header({ route }) {
         </div>
       </div>
     </div>
-  )
+  );
 }

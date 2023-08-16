@@ -12,9 +12,6 @@ export default function Layout({ fromHome, children }) {
     router = useRouter();
   }
 
-  // console.log('router', router, fromHome);
-  // console.log('Layout');
-
   return (
     <>
         <Header route={router?.route} />

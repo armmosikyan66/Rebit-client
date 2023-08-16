@@ -28,32 +28,41 @@ const useScrollSticky = () => {
     }
   }, [])
 
-  return isSticky;
+  return isSticky
 }
 
 export default function Header({ route }) {
+  console.log('route in header', route)
 
-  console.log('route in header', route);
+  const [opened, setOpened] = useState(false)
 
-  const [opened, setOpened] = useState(false);
-  const [menuCompany, setMenuCompany] = useState({opened: false, checked: false});
-  const [menuServices, setMenuServices] = useState(false);
-  const [menuProjects, setMenuProjects] = useState(false);
-
-  console.log('menuCompany', menuCompany)
+  const [menuServices, setMenuServices] = useState({
+    opened: false,
+    checked: false,
+  })
+  const [menuProjects, setMenuProjects] = useState(false)
 
   const toContacts = () => {
-    const navbar = document.getElementsByClassName("navbar-area")[0];
-    const contacts = document.getElementsByClassName('contact-section')[0];
-    const rect = contacts.getBoundingClientRect().top + window.pageYOffset - navbar.clientHeight;
-    window.scrollTo({ top: rect, behavior: "smooth" });
+    const navbar = document.getElementsByClassName('navbar-area')[0]
+    const contacts = document.getElementsByClassName('contact-section')[0]
+    const rect =
+      contacts.getBoundingClientRect().top +
+      window.pageYOffset -
+      navbar.clientHeight
+    window.scrollTo({ top: rect, behavior: 'smooth' })
   }
 
+  const isSticky = useScrollSticky()
+  const [menuCompany, setMenuCompany] = useState({ opened: false })
 
-  const isSticky = useScrollSticky();
+  const toggleDropdown = () => {
+    setMenuCompany((prevState) => ({
+      opened: !prevState.opened,
+    }))
+  }
 
   return (
-    <div id='navbar' className={`navbar-area ${isSticky ? 'is-sticky' : ''}`}>
+    <div id="navbar" className={`navbar-area ${isSticky ? 'is-sticky' : ''}`}>
       <div className="techvio-responsive-nav">
         <div className="container">
           <div className="techvio-responsive-menu mean-container">
@@ -73,101 +82,177 @@ export default function Header({ route }) {
                 />
               </a>
             </div>
-            <div style={{
-              left: 0,
-              top: 0,
-              color: "white"
-            }} className="mean-bar">
-              <a href="#nav" className={`meanmenu-reveal ${opened ? 'meanclose' : ''}`} onClick={() => setOpened(prev => !prev)}>
-                <span style={{background: isSticky ? "black" : "white"}}></span>
-                <span style={{background: isSticky ? "black" : "white"}}></span>
-                <span style={{background: isSticky ? "black" : "white"}}></span>
+            <div
+              style={{
+                left: 0,
+                top: 0,
+                color: 'white',
+              }}
+              className="mean-bar"
+            >
+              <a
+                href="#nav"
+                className={`meanmenu-reveal ${opened ? 'meanclose' : ''}`}
+                onClick={() => setOpened((prev) => !prev)}
+              >
+                <span
+                  style={{ background: isSticky ? 'black' : 'white' }}
+                ></span>
+                <span
+                  style={{ background: isSticky ? 'black' : 'white' }}
+                ></span>
+                <span
+                  style={{ background: isSticky ? 'black' : 'white' }}
+                ></span>
               </a>
               <nav className="mean-nav">
-                <ul className="navbar-nav" style={opened ? {display: 'flex'} : {display: "none"}}>
-                  <li className="nav-item">
-                    <Link href="#" className="nav-link">Home <i className="fas fa-chevron-down"></i></Link>
+                <ul
+                  className="navbar-nav"
+                  style={opened ? { display: 'flex' } : { display: 'none' }}
+                >
+                  <li className="nav-item ">
+                    <Link href="#" className="nav-link">
+                      Home <i className="fas fa-chevron-down"></i>
+                    </Link>
                   </li>
-                  <li className="nav-item" onClick={() => setMenuCompany({opened: !menuCompany.opened, checked: true})} ><a className="nav-link">
-                    Company
-                    <i className="fas fa-chevron-down"></i>
-                  </a>
-                    <ul className={`dropdown-menu ${menuCompany.opened ? 'opened-dropdown' : !menuCompany.opened && menuCompany.checked ? 'closed-dropdown' : ''}`}>
-                      <li className="nav-item"><Link href="/company/#aboutus" className="nav-link">
-                        About Us
-                      </Link>
+                  <li className="nav-item">
+                    <a className="nav-link" onClick={toggleDropdown}>
+                      Company
+                      <i className="fas fa-chevron-down"></i>
+                    </a>
+                    <ul
+                      className={`dropdown-menu ${
+                        menuCompany.opened ? 'opened-dropdown' : 'closed-dropdown'
+                      } `}
+                    >
+                      <li className="nav-item">
+                        <Link href="/company/#aboutus" className="nav-link">
+                          About Us
+                        </Link>
                       </li>
-                      <li className="nav-item"><Link href="/company/#team" className="nav-link">
-                        Team
-                      </Link>
+                      <li className="nav-item">
+                        <Link href="/company/#team" className="nav-link">
+                          Team
+                        </Link>
                       </li>
-                      <li className="nav-item"><Link href="/company/#careers" className="nav-link">
-                        Careers
-                      </Link>
-                      </li>
-                    </ul>
-                    <a className="mean-expand" href="#" style={{fontSize: 18}}>{menuCompany.opened ? '-' : '+'}</a></li>
-                  <li className="nav-item" onClick={() => setMenuServices(prev => !prev)}><a href="#" className="nav-link">
-                    Services
-                    <i className="fas fa-chevron-down"></i>
-                  </a>
-                    <ul className="dropdown-menu" style={menuServices ? {display: 'block'} : {display: "none"}}>
-                      <li className="nav-item"><Link href='/services/#webdevelopment' className="nav-link">
-                        Web Development
-                      </Link>
-                      </li>
-                      <li className="nav-item"><Link href="/services/#mobileapp" className="nav-link">
-                        Mobile App
-                      </Link>
-                      </li>
-                      <li className="nav-item"><Link href="/services/#aimodels" className="nav-link">
-                        AI Models
-                      </Link>
-                      </li>
-                      <li className="nav-item"><Link href="/services/#devops" className="nav-link">
-                        Devops
-                      </Link>
-                      </li>
-                      <li className="nav-item"><Link href="/services/#consulting" className="nav-link">
-                        Consulting
-                      </Link>
-                      </li>
-                      <li className="nav-item"><Link href="/services/#uiux" className="nav-link">
-                        UI/UX
-                      </Link>
+                      <li className="nav-item">
+                        <Link href="/company/#careers" className="nav-link">
+                          Careers
+                        </Link>
                       </li>
                     </ul>
-                    <a className="mean-expand" href="#" style={{fontSize: 18}}>{menuServices ? '-' : '+'}</a></li>
-                  <li className="nav-item" onClick={() => setMenuProjects(prev => !prev)}><a href="#" className="nav-link">
-                    Projects
-                    <i className="fas fa-chevron-down"></i>
-                  </a>
-                    <ul className="dropdown-menu" style={menuProjects ? {display: 'block'} : {display: "none"}}>
-                      <li className="nav-item"><Link href="/ourprojects" className="nav-link">
-                        Our Projects
-                      </Link>
+                    <a
+                      className="mean-expand"
+                      href="#"
+                      style={{ fontSize: 18 }}
+                      onClick={toggleDropdown}
+                    >
+                      {menuCompany.opened ? '-' : '+'}
+                    </a>
+                  </li>
+                  <li
+                    className="nav-item"
+                    onClick={() =>
+                      setMenuServices({
+                        opened: !menuServices.opened,
+                        checked: true,
+                      })
+                    }
+                  >
+                    <a href="#" className="nav-link">
+                      Services
+                      <i className="fas fa-chevron-down"></i>
+                    </a>
+                    <ul
+                      className={`dropdown-menu ${
+                        menuServices.opened
+                          ? 'opened-dropdown'
+                          : !menuServices.opened
+                          ? 'closed-dropdown'
+                          : ''
+                      }`}
+                      // style={
+                      //   menuServices
+                      //     ? { display: 'block' }
+                      //     : { display: 'none' }
+                      // }
+                    >
+                      <li className="nav-item">
+                        <Link
+                          href="/services/#webdevelopment"
+                          className="nav-link"
+                        >
+                          Web Development
+                        </Link>
                       </li>
-                      <li className="nav-item"><Link href="/ourstartups" className="nav-link">
-                        Our Startups
-                      </Link>
+                      <li className="nav-item">
+                        <Link href="/services/#mobileapp" className="nav-link">
+                          Mobile App
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link href="/services/#aimodels" className="nav-link">
+                          AI Models
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link href="/services/#devops" className="nav-link">
+                          Devops
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link href="/services/#consulting" className="nav-link">
+                          Consulting
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link href="/services/#uiux" className="nav-link">
+                          UI/UX
+                        </Link>
                       </li>
                     </ul>
-                    <a className="mean-expand" href="#" style={{fontSize: 18}}>{menuProjects ? '-' : '+'}</a></li>
-                  
-                  <li className="nav-item"><Link href="/itschool" className="nav-link">
-                    IT School
-                    <i className="fas fa-chevron-down"></i>
-                  </Link>
-                    </li>
+                    <a
+                      className="mean-expand"
+                      href="#"
+                      style={{ fontSize: 18 }}
+                    >
+                      {menuServices.opened ? '-' : '+'}
+                    </a>
+                  </li>
+                  <li
+                    className="nav-item"
+                    onClick={() => setMenuProjects((prev) => !prev)}
+                  >
+                    <a href="/ourstartups" className="nav-link">
+                      StartUps
+                      <i className="fas fa-chevron-down"></i>
+                    </a>
+                  </li>
+                  <li
+                    className="nav-item"
+                    onClick={() => setMenuProjects((prev) => !prev)}
+                  >
+                    <a href="/ourprojects" className="nav-link">
+                      Portfolio
+                      <i className="fas fa-chevron-down"></i>
+                    </a>
+                  </li>
+
+                  <li className="nav-item">
+                    <Link href="/itschool" className="nav-link">
+                      IT School
+                      <i className="fas fa-chevron-down"></i>
+                    </Link>
+                  </li>
                 </ul>
-                <div className="other-option"><a className="default-btn" href="mailto:demo@example.com">
-                  Get It Support
-                  <span></span>
-                </a>
+                <div className="other-option">
+                  <a className="default-btn" href="mailto:demo@example.com">
+                    Get It Support
+                    <span></span>
+                  </a>
                 </div>
               </nav>
             </div>
-
           </div>
         </div>
       </div>
@@ -191,30 +276,47 @@ export default function Header({ route }) {
             >
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link href="/" className="nav-link nav-linkk" style={route === '/' ? {color: '#048dff'} : {}}>
+                  <Link
+                    href="/"
+                    className="nav-link nav-linkk"
+                    style={route === '/' ? { color: '#048dff' } : {}}
+                  >
                     Home
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/company" style={route === '/company' ? {color: '#048dff'} : {}} className="nav-link nav-linkk">
+                  <Link
+                    href="/company"
+                    style={route === '/company' ? { color: '#048dff' } : {}}
+                    className="nav-link nav-linkk"
+                  >
                     Company <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       {' '}
-                      <Link href="/company/#aboutus" className="nav-link nav-linkk">
+                      <Link
+                        href="/company/#aboutus"
+                        className="nav-link nav-linkk"
+                      >
                         About Us
                       </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="/company/#team" className="nav-link nav-linkk">
+                      <Link
+                        href="/company/#team"
+                        className="nav-link nav-linkk"
+                      >
                         Team
                       </Link>
                     </li>
-                    <li className='nav-item'>
+                    <li className="nav-item">
                       {' '}
-                      <Link href='/company/#careers' className='nav-link nav-linkk'>
+                      <Link
+                        href="/company/#careers"
+                        className="nav-link nav-linkk"
+                      >
                         Careers
                       </Link>
                     </li>
@@ -222,73 +324,87 @@ export default function Header({ route }) {
                 </li>
                 <li className="nav-item">
                   {' '}
-                  <Link href="/services" id='services' style={route === '/services' ? {color: '#048dff'} : {}} className={"nav-link nav-linkk"}>
+                  <Link
+                    href="/services"
+                    id="services"
+                    style={route === '/services' ? { color: '#048dff' } : {}}
+                    className={'nav-link nav-linkk'}
+                  >
                     Services <i className="fas fa-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       {' '}
-
-                      <Link href='/services/#webdevelopment' className="nav-link nav-linkk">
+                      <Link
+                        href="/services/#webdevelopment"
+                        className="nav-link nav-linkk"
+                      >
                         Web Development
                       </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="/services/#mobileapp" className="nav-link nav-linkk">
+                      <Link
+                        href="/services/#mobileapp"
+                        className="nav-link nav-linkk"
+                      >
                         Mobile App
                       </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="/services/#aimodels" className="nav-link nav-linkk">
+                      <Link
+                        href="/services/#aimodels"
+                        className="nav-link nav-linkk"
+                      >
                         AI Models
                       </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="/services/#devops" className="nav-link nav-linkk">
+                      <Link
+                        href="/services/#devops"
+                        className="nav-link nav-linkk"
+                      >
                         DevOps
                       </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="/services/#consulting" className="nav-link nav-linkk">
+                      <Link
+                        href="/services/#consulting"
+                        className="nav-link nav-linkk"
+                      >
                         Consulting
                       </Link>
                     </li>
                     <li className="nav-item">
                       {' '}
-                      <Link href="/services/#uiux" className="nav-link nav-linkk">
+                      <Link
+                        href="/services/#uiux"
+                        className="nav-link nav-linkk"
+                      >
                         UI/UX
                       </Link>
-
                     </li>
                   </ul>
                 </li>
                 <li className="nav-item">
                   {' '}
-                  <Link href="#" style={route === '/ourstartups' || route === '/ourprojects' ? {color: '#048dff'} : {}} className="nav-link nav-linkk">
-                    Projects<i className="fas fa-chevron-down"></i>
+                  <Link href="/ourstartups" className="nav-link nav-linkk">
+                    StartUps
                   </Link>
-                  <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      {' '}
-                      <Link href="/ourprojects" className="nav-link nav-linkk">
-                        Our Projects
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      {' '}
-                      <Link href="/ourstartups" className="nav-link nav-linkk">
-                        Our Startups
-                      </Link>
-                    </li>
-                  </ul>
                 </li>
                 <li className="nav-item">
                   {' '}
-                  <Link href="/itschool" style={route === '/itschool' ? {color: '#048dff'} : {}} className="nav-link nav-linkk">
+                  <Link href="/ourprojects" className="nav-link nav-linkk">
+                    Portfolio
+                  </Link>
+                </li>
+
+                <li className="nav-item">
+                  {' '}
+                  <Link href="/itschool" className="nav-link nav-linkk">
                     IT School
                   </Link>
                 </li>
@@ -307,4 +423,3 @@ export default function Header({ route }) {
     </div>
   )
 }
-

@@ -7,6 +7,23 @@
 *****************************************************************/
 
 @media only screen and (max-width: 767px) {
+	.dropdown-menu {
+		display: block;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.9s linear;
+	  }
+	
+	  .dropdown-menu.opened-dropdown {
+		max-height: 500px;
+		/* animation-duration: 1.5s; */
+	
+	  }
+	
+	  .dropdown-menu.closed-dropdown {
+		max-height: 0px;
+		/* animation-duration: 0.3s; */
+	  }
 	.content-wrapper {
 		display: flex;
 		flex-direction: column !important;
@@ -514,6 +531,23 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+	.dropdown-menu {
+		display: block;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.9s linear;
+	  }
+	
+	  .dropdown-menu.opened-dropdown {
+		max-height: 500px;
+		/* animation-duration: 1.5s; */
+	
+	  }
+	
+	  .dropdown-menu.closed-dropdown {
+		max-height: 0px;
+		/* animation-duration: 0.3s; */
+	  }
 	.content-wrapper {
 		display: flex;
 		flex-direction: column !important;

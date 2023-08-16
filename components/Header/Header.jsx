@@ -32,7 +32,6 @@ const useScrollSticky = () => {
 };
 
 export default function Header({ route }) {
-  console.log("route in header", route);
 
   const [opened, setOpened] = useState(false);
 

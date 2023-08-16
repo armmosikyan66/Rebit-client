@@ -5253,57 +5253,51 @@ blockquote::after,
 
 @media (max-width: 991px) {
   .dropdown-menu {
+    display: block !important;
     /* overflow: hidden !important; */
-	animation: changeHeightReverse 1s ease;
+    /* animation: changeHeightReverse 1s ease; */
   }
 
   .dropdown-menu.opened-dropdown {
     animation: changeHeight 1s ease;
   }
 
+  .dropdown-menu.closed-dropdown {
+    /* animation: changeHeightReverse 10s ease; */
+    display: none !important;
+  }
+
   @keyframes changeHeight {
     0% {
       height: 0px;
-	  overflow: hidden;
+      overflow: hidden;
     }
-	/* 25% {
-		overflow: visible;
-	} */
-	50% {
-		height: 100px;
-		/* overflow: visible; */
-	}
-	75% {
-		overflow: visible;
-	}
+    50% {
+      height: 100px;
+    }
+    75% {
+      overflow: visible;
+    }
     100% {
       height: fit-content;
-	  overflow: visible;
-      /* display: none !important; */
+      overflow: visible;
     }
   }
 
   @keyframes changeHeightReverse {
     0% {
-	  /* height: fit-content;
-	  overflow: visible; */
-	  display: block !important;
+      height: fit-content;
+      overflow: visible;
     }
-	/* 25% {
-		overflow: visible;
-	} */
-	/* 50% {
-		overflow: visible;
-	}
-	75% {
-		overflow: visible;
-		height: 100px;
-	} */
+    25% {
+      overflow: visible;
+    }
+    50% {
+      height: 100px;
+    }
     100% {
-		height: 0px;
-		overflow: hidden;
-		display: none !important;
-      /* display: none !important; */
+      height: 0px;
+      overflow: hidden;
     }
   }
 }

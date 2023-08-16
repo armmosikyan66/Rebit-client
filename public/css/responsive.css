@@ -7,6 +7,18 @@
 *****************************************************************/
 
 @media only screen and (max-width: 767px) {
+	.content-wrapper {
+		display: flex;
+		flex-direction: column !important;
+		padding: 20px 20px !important;
+
+	}
+
+
+	.text-block {
+		width: 100% !important;
+		text-align: center;
+	}
 
 	.section-title h2 {
 		font-size: 30px;
@@ -76,7 +88,7 @@
 	.slider .control-text {
 		display: none;
 	}
-	
+
 	.slider .parallax-slider .caption h1 {
 		font-size: 35px;
 	}
@@ -88,10 +100,12 @@
 	.about-content-text h2 {
 		font-size: 25px;
 	}
+
 	.about-image {
 		text-align: center;
 		margin-top: 35px;
 	}
+
 	.about-image .years-design {
 		left: 25px;
 		bottom: 25px;
@@ -204,13 +218,16 @@
 		margin-bottom: 30px;
 		text-align: center;
 	}
+
 	.overview-image-2 {
 		text-align: center;
 		margin-top: 35px;
 	}
+
 	.single-counter {
 		padding: 15px 0;
 	}
+
 	.single-testimonial {
 		padding: 30px 10px;
 	}
@@ -218,13 +235,15 @@
 	.hire-content h2 {
 		font-size: 35px;
 	}
+
 	.hire-content p {
 		font-size: 15px;
 	}
+
 	.hire-content .hire-btn .hire-btn-one {
 		margin-left: 0;
 	}
-	
+
 	.partner-list .partner-item a {
 		padding: 0px 15px;
 	}
@@ -252,7 +271,7 @@
 	.services-widget {
 		margin-top: 40px;
 	}
-	
+
 	.projects-details-desc .project-details-info {
 		margin-top: 16px;
 	}
@@ -347,21 +366,26 @@
 	.blog-details-desc .article-content h3 {
 		font-size: 20px;
 	}
+
 	.comments-area .comment-respond .comment-form-author {
 		float: left;
 		width: 100%;
 		padding-right: 0px;
 	}
+
 	.comments-area .comment-respond .comment-form-email {
 		float: left;
 		width: 100%;
 		padding-left: 0px;
 	}
-	blockquote, .blockquote {
+
+	blockquote,
+	.blockquote {
 		padding: 18px !important;
 	}
 
-	blockquote p, .blockquote p {
+	blockquote p,
+	.blockquote p {
 		font-size: 16px !important;
 	}
 
@@ -392,16 +416,20 @@
 	.copyright-area ul {
 		text-align: center;
 	}
+
 	.slider .parallax-slider .caption {
 		text-align: left;
 		padding-top: 0px;
 	}
+
 	.project-area .project-list .nav li {
 		margin: 10px 5px;
 	}
+
 	.faq-accordion.first-faq-box {
 		margin-bottom: 30px;
 	}
+
 	.blog-details-desc .article-content .wp-block-gallery.columns-3 li {
 		-ms-flex: 0 0 100%;
 		-webkit-box-flex: 0;
@@ -411,6 +439,7 @@
 		padding-left: 10px;
 		margin-bottom: 20px;
 	}
+
 	.blog-details-desc .article-content .wp-block-gallery.columns-3 li:last-child {
 		margin-bottom: 0px;
 	}
@@ -436,27 +465,66 @@
 		padding-bottom: 100px;
 		background-position: center;
 	}
-	
+
+	.content-wrapper {
+		display: flex;
+		flex-direction: column !important;
+		padding: 20px 20px !important
+	}
+
+	.text-block {
+
+		max-width: 100% !important;
+		text-align: center;
+	}
+
 }
-@media only screen and (min-width: 0px) and (max-width: 479px) {
+
+@media only screen and (min-width: 0px) and (max-width: 575px) {
 	.slider .parallax-slider .caption {
 		text-align: left;
 		padding-top: 70px;
 	}
+
 	.hire-content h2 {
 		font-size: 30px;
 	}
+
 	.partner-list .partner-item a {
 		padding: 0px 0px;
 	}
+
 	.blog-details-desc .article-footer .article-share {
 		flex: unset;
 		max-width: unset;
 		margin-top: 20px;
 	}
+
+	.content-wrapper {
+		display: flex;
+		flex-direction: column !important;
+		padding: 20px 20px !important
+	}
+
+	.text-block {
+		max-width: 100% !important;
+		text-align: center;
+	}
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+	.content-wrapper {
+		display: flex;
+		flex-direction: column !important;
+		padding: 20px 20px !important
+	}
+
+	.text-block {
+		width: 100% !important;
+		text-align: center;
+	}
+
 	.section-title span {
 		font-size: 15px;
 	}
@@ -506,7 +574,7 @@
 	.slider .control-text {
 		display: none;
 	}
-	
+
 	.main-banner-content {
 		margin: auto;
 		text-align: center;
@@ -525,14 +593,17 @@
 	.about-content-text h2 {
 		font-size: 33px;
 	}
+
 	.about-image {
 		text-align: center;
 		margin-top: 35px;
 	}
+
 	.about-image .years-design {
 		left: 75px;
 		bottom: 25px;
 	}
+
 	.about-content .about-btn {
 		margin-top: 20px;
 	}
@@ -570,11 +641,11 @@
 	.blog-item .single-blog-item .blog-list i::before {
 		font-size: 12px;
 	}
-	
+
 	.hire-inside-wrapper {
 		padding: 70px 75px;
 	}
-	
+
 	.partner-title {
 		margin-bottom: 30px;
 	}
@@ -645,19 +716,24 @@
 		margin-bottom: 35px;
 		text-align: center;
 	}
+
 	.overview-image-2 {
 		text-align: center;
 		margin-top: 35px;
 	}
+
 	.single-counter {
 		padding: 15px 0;
 	}
+
 	.hire-content h2 {
 		font-size: 33px;
 	}
+
 	.hire-content p {
 		font-size: 15px;
 	}
+
 	.partner-list .partner-item a {
 		padding: 0px 50px;
 	}
@@ -749,12 +825,14 @@
 	.copyright-area ul {
 		text-align: right;
 	}
+
 	.faq-accordion.first-faq-box {
 		margin-bottom: 30px;
 	}
+
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
 	.navbar-light .navbar-brand {
 		margin-left: 0;
 		margin-right: 0;
@@ -782,7 +860,7 @@
 	.home-area {
 		height: 800px;
 	}
-	
+
 	.about-content-text h2 {
 		font-size: 33px;
 	}
@@ -823,7 +901,7 @@
 	}
 
 	.overview-content .features-list-1 li span,
-    .overview-content .features-list li span {
+	.overview-content .features-list li span {
 		padding: 15px;
 		font-size: 15px;
 	}
@@ -834,5 +912,10 @@
 
 	.single-footer-widget .footer-heading h3 {
 		font-size: 19px;
+	}
+
+	.text-block {
+		width: 100% !important;
+		text-align: center;
 	}
 }

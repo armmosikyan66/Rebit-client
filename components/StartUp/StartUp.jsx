@@ -18,9 +18,8 @@ const Modal = (props) => {
 };
 
 export default function StartUp(props) {
-  // website logo text
+
   const [opened, setOpened] = useState(false);
-  console.log('modal', opened)
 
   const toggleModal = () => {
     setOpened(prev => !prev);

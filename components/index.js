@@ -14,6 +14,7 @@ import SliderHeader from "./SliderHeader/SliderHeader"
 import School from "./School/School"
 import TrustUs from "./TrustUs/TrustUs"
 import ContactUs from "./ContactUs/ContactUs"
+import StartUp from "./StartUp/StartUp"
 
 export {
     Header,
@@ -31,6 +32,6 @@ export {
     SliderHeader,
     School,
     TrustUs,
-    ContactUs
-
+    ContactUs,
+    StartUp
 }

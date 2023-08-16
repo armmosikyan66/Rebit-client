@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { ContactUs } from "..";
 
 export default function Footer() {
@@ -75,45 +76,32 @@ export default function Footer() {
                   <ul className="footer-quick-links">
                     <li>
                       {" "}
-                      <a href="projects.html">Web Development</a>
+                      <Link href="/webdevelopment">Web Development</Link>
                     </li>
                     <li>
                       {" "}
-                      <a href="#">Mobile App</a>
+                      <Link href="/mobileapp">Mobile App</Link>
                     </li>
                     <li>
                       {" "}
-                      <a href="services.html">AI Models</a>
+                      <Link href="/aimodels">AI Models</Link>
                     </li>
                     <li>
                       {" "}
-                      <a href="team.html">DevOps</a>
+                      <Link href="/devops">DevOps</Link>
                     </li>
                     <li>
                       {" "}
-                      <a href="contact.html">Consulting</a>
+                      <Link href="/consulting">Consulting</Link>
                     </li>
                     <li>
                       {" "}
-                      <a href="contact.html">UI/UX</a>
+                      <Link href="/services/#uiux">UI/UX</Link>
                     </li>
                   </ul>
                 </div>
               </div>
-              {/* <div className="col-lg-2 col-md-6 col-sm-6">
-						<div className="single-footer-widget">
-							<div className="footer-heading">
-								<h3>Useful Links</h3>
-							</div>
-							<ul className="footer-quick-links">
-								<li><Link href="aboutus">About Us</Link></li>
-								<li><a href="projects.html">Case Study</a></li>
-								<li><a href="contact.html">Contact Us</a></li>
-								<li><a href="privacy-policy.html">Privacy Policy</a></li>
-								<li><a href="terms-condition.html">Terms & Conditions</a></li>
-							</ul>
-						</div>
-					</div> */}
+
               <div className="col-lg-4 col-md-6 col-sm-6">
                 <div className="single-footer-widget">
                   <div className="footer-heading">

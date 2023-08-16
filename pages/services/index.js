@@ -76,7 +76,7 @@ function Services() {
     {
       id: "uiuxs",
       title: "UI/UX",
-      description: `services at Rebit.ai revolve around your users' needs and expectations.
+      description: `Services at Rebit.ai revolve around your users' needs and expectations.
                     We meticulously analyze user behaviors, preferences, and pain points to develop design 
                     strategies that cater to their unique journey, ensuring a memorable and delightful experience 
                     at every touchpoint. Innovative Visual Storytelling: We believe that design should not only be 

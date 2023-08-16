@@ -242,7 +242,7 @@ export default function Header({ route }) {
                     onClick={() => setMenuProjects((prev) => !prev)}
                   >
                     <a href="/ourstartups" className="nav-link">
-                      StartUps
+                      Startups
                       <i className="fas fa-chevron-down"></i>
                     </a>
                   </li>
@@ -410,7 +410,7 @@ export default function Header({ route }) {
                 <li className="nav-item">
                   {" "}
                   <Link href="/ourstartups" className="nav-link nav-linkk">
-                    StartUps
+                    Startups
                   </Link>
                 </li>
                 <li className="nav-item">

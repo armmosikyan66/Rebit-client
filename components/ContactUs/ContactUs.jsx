@@ -238,7 +238,7 @@ function ContactUs() {
             </div>
             <div className="col-lg-5 d-flex flex-column align-items-center">
               <div>
-                <Image src={Contactus} height={200} />
+                <Image src={Contactus} height={200} alt='contact us' />
               </div>
               <div className="d-flex flex-column    " style={{paddingLeft:100}}>
                 <div className="services-icon d-flex align-items-center align ">

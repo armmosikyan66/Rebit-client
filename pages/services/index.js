@@ -98,7 +98,7 @@ function Services() {
           <p style={{ order: 1 }}>{description}</p>
         </div>
         <div className="image-block" style={{order:3}}>
-          <Image src={image} />
+          <Image src={image} alt="stacks" priority />
         </div>
       </div>
     </div>

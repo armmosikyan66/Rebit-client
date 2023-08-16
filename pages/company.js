@@ -61,7 +61,6 @@ function Company() {
     (() => {
       if (asPath.includes("#")) {
         const last = asPath.split("#")[1];
-        console.log("last", last);
         const navbar = document.getElementsByClassName("navbar-area")[0];
 
         if (last === "aboutus") {
@@ -70,7 +69,6 @@ function Company() {
             element.getBoundingClientRect().top +
             window.pageYOffset -
             navbar.clientHeight;
-          console.log("aboutus", rect);
           window.scrollTo({ top: rect, behavior: "smooth" });
         } else if (last === "team") {
           const element = document.getElementsByClassName("team-area")[0];
@@ -78,7 +76,6 @@ function Company() {
             element.getBoundingClientRect().top +
             window.pageYOffset -
             navbar.clientHeight;
-          console.log("team", rect);
           window.scrollTo({ top: rect, behavior: "smooth" });
         } else if (last === "careers") {
           const element = document.getElementById("careersss");
@@ -86,13 +83,11 @@ function Company() {
             element.getBoundingClientRect().top +
             window.pageYOffset -
             navbar.clientHeight;
-          console.log("careers", rect);
           window.scrollTo({ top: rect, behavior: "smooth" });
         }
       }
     })();
 
-    console.log("useeffect works empty array");
   }, [asPath]);
 
   return (

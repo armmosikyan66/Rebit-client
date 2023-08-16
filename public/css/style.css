@@ -4740,6 +4740,7 @@ blockquote::after,
 
 .startups-container .startups-container__block:hover {
   border-color: #048dff;
+  cursor: pointer;
 }
 
 .startups-container__block img {
@@ -4749,6 +4750,7 @@ blockquote::after,
 }
 
 .startup-modal {
+  cursor: auto;
   position: fixed;
   width: 100vw;
   left: 0px;
@@ -4767,6 +4769,10 @@ blockquote::after,
 .startup-modal__close {
   display: flex;
   justify-content: flex-end;
+}
+
+.startup-modal__close i {
+  cursor: pointer;
 }
 
 .startup-modal__container {

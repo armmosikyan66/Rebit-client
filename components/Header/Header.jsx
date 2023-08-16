@@ -36,9 +36,11 @@ export default function Header({ route }) {
   console.log('route in header', route);
 
   const [opened, setOpened] = useState(false);
-  const [menuCompany, setMenuCompany] = useState(false);
+  const [menuCompany, setMenuCompany] = useState({opened: false, checked: false});
   const [menuServices, setMenuServices] = useState(false);
   const [menuProjects, setMenuProjects] = useState(false);
+
+  console.log('menuCompany', menuCompany)
 
   const toContacts = () => {
     const navbar = document.getElementsByClassName("navbar-area")[0];
@@ -86,11 +88,11 @@ export default function Header({ route }) {
                   <li className="nav-item">
                     <Link href="#" className="nav-link">Home <i className="fas fa-chevron-down"></i></Link>
                   </li>
-                  <li className="nav-item" onClick={() => setMenuCompany(prev => !prev)} ><a className="nav-link">
+                  <li className="nav-item" onClick={() => setMenuCompany({opened: !menuCompany.opened, checked: true})} ><a className="nav-link">
                     Company
                     <i className="fas fa-chevron-down"></i>
                   </a>
-                    <ul className={`dropdown-menu ${menuCompany ? 'opened-dropdown' : ''}`} style={menuCompany ? {display: 'block'} : {display: "none"}}>
+                    <ul className={`dropdown-menu ${menuCompany.opened ? 'opened-dropdown' : !menuCompany.opened && menuCompany.checked ? 'closed-dropdown' : ''}`}>
                       <li className="nav-item"><Link href="/company/#aboutus" className="nav-link">
                         About Us
                       </Link>
@@ -104,7 +106,7 @@ export default function Header({ route }) {
                       </Link>
                       </li>
                     </ul>
-                    <a className="mean-expand" href="#" style={{fontSize: 18}}>{menuCompany ? '-' : '+'}</a></li>
+                    <a className="mean-expand" href="#" style={{fontSize: 18}}>{menuCompany.opened ? '-' : '+'}</a></li>
                   <li className="nav-item" onClick={() => setMenuServices(prev => !prev)}><a href="#" className="nav-link">
                     Services
                     <i className="fas fa-chevron-down"></i>

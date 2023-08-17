@@ -9,7 +9,7 @@ const Modal = (props) => {
         <div className="startup-modal__close">
             <i class="fa fa-window-close" aria-hidden="true" style={{fontSize: '30px'}}  onClick={props.toggleModal}></i>
         </div>
-        <Image src={props.logo} alt="logo" />
+        <Image width={400} height={400} src={'https://rebit-server.onrender.com/assets/uploads/' + props.logo} alt="logo" />
         <p>{props.text}</p>
         <p>To the <a href={props.website}>website</a></p>
       </div>
@@ -18,6 +18,7 @@ const Modal = (props) => {
 };
 
 export default function StartUp(props) {
+  console.log('props', props)
 
   const [opened, setOpened] = useState(false);
 
@@ -27,7 +28,7 @@ export default function StartUp(props) {
 
   return (
     <div className="startups-container__block" onClick={toggleModal}>
-      <Image src={props.logo} alt="logo" />
+      <Image width={500} height={500} src={'https://rebit-server.onrender.com/assets/uploads/' + props.logo} alt="logo" />
       {opened && <Modal logo={props.logo} text={props.text} website={props.website} toggleModal={toggleModal} />}
     </div>
   );

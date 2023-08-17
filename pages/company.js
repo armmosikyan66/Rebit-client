@@ -57,15 +57,8 @@ const teamMembers = [
 
 function Company() {
   let router = useRouter();
+
   const asPath = router.asPath;
-
-  useEffect(() => {
-    const func = async () => {
-      console.log('ssssssssssssss', await axios.get('https://rebit-server.onrender.com/api/projects?type=project'))
-    }
-
-    func()
-  }, []);
 
   // useEffect(() => {
   //   (() => {

@@ -71,38 +71,66 @@ function Company() {
     func()
   }, []);
 
-  // useEffect(() => {
-  //   (() => {
-  //     if (asPath.includes("#")) {
-  //       const last = asPath.split("#")[1];
-  //       const navbar = document.getElementsByClassName("navbar-area")[0];
+  useEffect(() => {
+    (() => {
+      if (asPath.includes("#")) {
+        const last = asPath.split("#")[1];
+        const navbar = document.getElementsByClassName("navbar-area")[0];
 
-  //       if (last === "aboutus") {
-  //         const element = document.getElementsByClassName('about-area')[0];
-  //         const rect =
-  //           element.getBoundingClientRect().top +
-  //           window.pageYOffset -
-  //           navbar.clientHeight;
-  //         window.scrollTo({ top: rect, behavior: "smooth" });
-  //       } else if (last === "team") {
-  //         const element = document.getElementsByClassName("team-area")[0];
-  //         const rect =
-  //           element.getBoundingClientRect().top +
-  //           window.pageYOffset -
-  //           navbar.clientHeight;
-  //         window.scrollTo({ top: rect, behavior: "smooth" });
-  //       } else if (last === "careers") {
-  //         const element = document.getElementById("careersss");
-  //         const rect =
-  //           element.getBoundingClientRect().top +
-  //           window.pageYOffset -
-  //           navbar.clientHeight;
-  //         window.scrollTo({ top: rect, behavior: "smooth" });
-  //       }
-  //     }
-  //   })();
+        if (last === "aboutus") {
+          const element = document.getElementsByClassName('about-area')[0];
+          const rect =
+            element.getBoundingClientRect().top +
+            window.pageYOffset -
+            navbar.clientHeight;
+          window.scrollTo({ top: rect, behavior: "smooth" });
+        } else if (last === "team") {
+          const element = document.getElementsByClassName("team-area")[0];
+          const rect =
+            element.getBoundingClientRect().top +
+            window.pageYOffset -
+            navbar.clientHeight;
+          window.scrollTo({ top: rect, behavior: "smooth" });
+        } else if (last === "careers") {
+          const element = document.getElementById("careersss");
+          const rect =
+            element.getBoundingClientRect().top +
+            window.pageYOffset -
+            navbar.clientHeight;
+          window.scrollTo({ top: rect, behavior: "smooth" });
+        }
+      }
+    })();
 
-  // }, [asPath]);
+  },);
+
+  useEffect(() => {
+    const idHashMapping = {
+      webdevelopment: "web-dev",
+      mobileapp: "mobile-app",
+      aimodels: "ai",
+      devops: "devopss",
+      consulting: "xxxxxxx",
+      uiux: "uiuxs",
+    };
+
+    if (asPath.includes("#")) {
+      const last = asPath.split("#")[1];
+      const navbar = document.getElementsByClassName("navbar-area")[0];
+
+      const elementId = idHashMapping[last];
+      if (elementId) {
+        const element = document.getElementById(elementId);
+        if (element) {
+          const rect =
+            element.getBoundingClientRect().top +
+            window.pageYOffset -
+            navbar.clientHeight;
+          window.scrollTo({ top: rect, behavior: "smooth" });
+        }
+      }
+    }
+  }, );
 
   return (
     <>
@@ -113,7 +141,7 @@ function Company() {
       <PageTitle title={"Company"} />
       <AboutCompany />
 
-     
+
       <section className="team-area section-padding">
         <div className="container">
           <div className="row">

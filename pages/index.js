@@ -1,36 +1,24 @@
-import { 
-    Layout, 
-    SliderHeader, 
-    AboutCompany, 
-    OurStack, 
-    ChooseUs, 
-    TrustUs, 
-    Achievements, 
-    ClientsSay, 
-    School, 
-    Blog, 
-    CooperationBlock, 
-    OurCustomers 
-  } from '@/components'
-  
-  
-  export default function Home() {
+import Head from "next/head";
+import {
+  SliderHeader,
+  AboutCompany,
+  OurStack,
+  School,
+  OurCustomers,
+} from "@/components";
 
-    return (
-      <>
-        {/* <Layout fromHome={true} > */}
-          <SliderHeader />
-          <AboutCompany />
-          <OurStack />
-          {/* <ChooseUs /> */}
-          {/* <TrustUs /> */}
-          {/* <Achievements /> */}
-          {/* <ClientsSay /> */}
-          <School />
-          {/* <Blog /> */}
-          {/* <CooperationBlock /> */}
-          <OurCustomers />
-        {/* </Layout> */}
-      </>
-    )
-  }
+export default function Home() {
+  return (
+    <>
+      <Head>
+        <title>Rebit</title>
+        <meta name="description" content="Rebit.ai homepage"></meta>
+      </Head>
+      <SliderHeader />
+      <AboutCompany />
+      <OurStack />
+      <School />
+      <OurCustomers />
+    </>
+  );
+}

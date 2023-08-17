@@ -1,14 +1,14 @@
+import Head from "next/head";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { PageTitle } from "@/components";
-import Web from '@/assets/img/webb-removebg-preview.png';
-import Mobile from '@/assets/img/mobile-removebg-preview.png';
-import Ai from '@/assets/img/aii-removebg-preview.png';
-import Devops from '@/assets/img/devops.png';
-import Consulting from '@/assets/img/consul-removebg-preview.png';
-import Ui3 from '@/assets/img/Social_Media_Platforms-removebg-preview.png';
-
+import Web from "@/assets/img/webb-removebg-preview.png";
+import Mobile from "@/assets/img/mobile-removebg-preview.png";
+import Ai from "@/assets/img/aii-removebg-preview.png";
+import Devops from "@/assets/img/devops.png";
+import Consulting from "@/assets/img/consul-removebg-preview.png";
+import Ui3 from "@/assets/img/Social_Media_Platforms-removebg-preview.png";
 
 function Services() {
   let router = useRouter();
@@ -89,15 +89,18 @@ function Services() {
 
   const StackSection = ({ id, title, description, image, index }) => (
     <div id={id} className="stack-element">
-      <div id="reverse" className="content-wrapper" style={{flexDirection:index%2===1 ?'row-reverse':''}} >
-
+      <div
+        id="reverse"
+        className="content-wrapper"
+        style={{ flexDirection: index % 2 === 1 ? "row-reverse" : "" }}
+      >
         <div className="text-block">
           <div className="text-block__title" style={{ order: 2 }}>
             <span>{title}</span>
           </div>
           <p style={{ order: 1 }}>{description}</p>
         </div>
-        <div className="image-block" style={{order:3}}>
+        <div className="image-block" style={{ order: 3 }}>
           <Image src={image} alt="stacks" priority />
         </div>
       </div>
@@ -113,11 +116,11 @@ function Services() {
       consulting: "xxxxxxx",
       uiux: "uiuxs",
     };
-  
+
     if (asPath.includes("#")) {
       const last = asPath.split("#")[1];
       const navbar = document.getElementsByClassName("navbar-area")[0];
-  
+
       const elementId = idHashMapping[last];
       if (elementId) {
         const element = document.getElementById(elementId);
@@ -131,13 +134,20 @@ function Services() {
       }
     }
   }, [asPath]);
-  
+
   return (
     <>
+      <Head>
+        <title>Our Services</title>
+        <meta
+          name="description"
+          content="Learn about our company, our team members, and our mission."
+        />
+      </Head>
       <PageTitle title={"Our Services"} />
       {stackElements.map((section, index) => (
         <StackSection
-        index={index}
+          index={index}
           key={section.id}
           id={section.id}
           title={section.title}

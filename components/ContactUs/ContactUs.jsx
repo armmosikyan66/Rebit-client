@@ -114,7 +114,7 @@ function ContactUs() {
           <div className="section-title">
             <h2>Let's Talk</h2>
           </div>
-          <div className="row align-items-center">
+          <div className="row align-items-center ">
             <div className="col-lg-6 offset-lg-1">
               <div className="contact-form">
                 <p className="form-message"></p>
@@ -122,17 +122,8 @@ function ContactUs() {
                 <div id="contact-form" className="contact-form form">
                   <div className="row row-container">
                     <div className="col-lg-6 col-md-6">
-                      <div
-                        className="form-group "
-                        style={{ marginBottom: errors.name ? 20 : 0 }}
-                      >
-                        <input
-                          type="text"
-                          name="name"
-                          id="name"
-                          className={`form-control ${
-                            !checked && errors.name ? 'error-req' : ''
-                          }`}
+                      <div className="form-group " style={{ marginBottom: errors.name ? 0 : 0 }}>
+                        <input  type="text" name="name" id="name" className={`form-control ${!checked && errors.name ? 'error-req' : ''}`}
                           placeholder="First Name"
                           onChange={(e) => handleInputChange(e)}
                           value={formData.name}
@@ -158,7 +149,7 @@ function ContactUs() {
                     <div className="col-lg-6 col-md-6">
                       <div
                         className="form-group"
-                        style={{ marginBottom: errors.email ? 20 : 0 }}
+                        style={{ marginBottom: errors.email ? 0 : 0 }}
                       >
                         <input
                           type="email"
@@ -180,7 +171,7 @@ function ContactUs() {
                     <div className="col-lg-6 col-md-6">
                       <div
                         className="form-group"
-                        style={{ marginBottom: errors.phone ? 20 : 50 }}
+                        style={{ marginBottom: errors.phone ? 0 : 0 }}
                       >
                         <input
                           type="text"
@@ -203,7 +194,7 @@ function ContactUs() {
                     <div className="col-lg-12 col-md-12">
                       <div
                         className="form-group"
-                        style={{ marginBottom: errors.message ? 20 : 20 }}
+                        style={{ marginBottom: errors.message ? 0 : 0 }}
                       >
                         <textarea
                           name="message"
@@ -236,7 +227,7 @@ function ContactUs() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-5 d-flex flex-column align-items-center">
+            <div className="col-lg-5 d-flex flex-column align-items-center justify-content-start">
               <div>
                 <Image src={Contactus} height={200} alt='contact us' />
               </div>

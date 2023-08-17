@@ -129,8 +129,9 @@ a:hover {
 }
 
 .error-text {
+  position: absolute;
   color: #fc0303;
-  margin-top: 5px;
+  /* margin-top: 5px; */
   text-align: center;
   font-size: 12px;
 }
@@ -3073,7 +3074,7 @@ p:last-child {
 .contact-section {}
 
 .contact-form .form-group {
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 
 .contact-form div .form-control {
@@ -4623,7 +4624,7 @@ blockquote::after,
 
 }
 
-.text-block>.text-block__title>span {
+ .text-block>.text-block__title>span {
   font-size: 24px;
   font-weight: 700;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -4685,9 +4686,9 @@ blockquote::after,
   margin: 0 auto;
   padding: 20px;
 
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 
 }
 
@@ -4786,9 +4787,9 @@ blockquote::after,
 }
 
 .startup-modal__container img {
-    width: 211.36px;
-    height: 80px;
-    margin-bottom: 50px;
+  width: 211.36px;
+  height: 80px;
+  margin-bottom: 50px;
 }
 
 .startup-modal__container p {
@@ -4796,9 +4797,13 @@ blockquote::after,
 }
 
 .startup-modal__container p:last-child {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
-.startup-modal__container p > a {
-    color: #4A46CB;
+.startup-modal__container p>a {
+  color: #4A46CB;
+}
+
+.row.row-container {
+  row-gap: 30px !important;
 }

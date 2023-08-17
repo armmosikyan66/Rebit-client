@@ -76,23 +76,23 @@ export default function Footer() {
                   <ul className="footer-quick-links">
                     <li>
                       {" "}
-                      <Link href="/webdevelopment">Web Development</Link>
+                      <Link href="services/#webdevelopment">Web Development</Link>
                     </li>
                     <li>
                       {" "}
-                      <Link href="/mobileapp">Mobile App</Link>
+                      <Link href="services/#mobileapp">Mobile App</Link>
                     </li>
                     <li>
                       {" "}
-                      <Link href="/aimodels">AI Models</Link>
+                      <Link href="services/#aimodels">AI Models</Link>
                     </li>
                     <li>
                       {" "}
-                      <Link href="/devops">DevOps</Link>
+                      <Link href="services/#devops">DevOps</Link>
                     </li>
                     <li>
                       {" "}
-                      <Link href="/consulting">Consulting</Link>
+                      <Link href="services/#consulting">Consulting</Link>
                     </li>
                     <li>
                       {" "}

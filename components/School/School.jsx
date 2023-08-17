@@ -43,11 +43,16 @@ export default function School() {
                   means so that you can enter the IT field. Join us to learn new
                   things and become smart specialists and develop further
                 </p>
+                <div className="d-flex ">
+                  <div className="about-btn-box">
+                    <a className="default-btn project-btn-1" href="itschool">
+                      Learn More<span></span>
+                    </a>
+                  </div>
 
-                <div className="about-btn-box">
-                  <a className="default-btn project-btn-1" href="itschool">
-                    Learn More<span></span>
-                  </a>
+                  {/* <div className="about-btn-box  ml-4">
+                    <a className="default-btn project-btn-1" href='/'>Donate</a>
+                  </div> */}
                 </div>
               </div>
             </div>

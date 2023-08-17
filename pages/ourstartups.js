@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Head from "next/head";
 import { PageTitle, StartUp } from "@/components";
 import speaking_pal from '@/assets/img/speaking-pal.jpeg';
 import milgo_logo from '@/assets/img/milgo-logo-animated.gif';
@@ -19,6 +19,10 @@ const startUps = [
 function OurStartUps() {
   return (
     <>
+      <Head>
+        <title>Our Startups</title>
+        <meta name="description" content="About our startups" />
+      </Head>
       <PageTitle title={"Our StartUps"} />
       <div className="startups-container">
         {startUps.map(el => <StartUp text={el.text} logo={el.logo} website={el.website} />)}

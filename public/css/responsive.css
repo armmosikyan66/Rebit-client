@@ -7,17 +7,26 @@
 *****************************************************************/
 
 @media only screen and (max-width: 767px) {
+
+	input.form-control {
+		/* display: none; */
+		margin-bottom: 10px;
+	}
+
+	.row.row-container {
+		row-gap: 10px !important;
+	}
+
 	.dropdown-menu {
 		display: block;
 		max-height: 0;
 		overflow: hidden;
 		transition: max-height 0.9s linear;
-	  }
+	}
 	
 	  .dropdown-menu.opened-dropdown {
 		max-height: 500px;
 		/* animation-duration: 1.5s; */
-	
 	  }
 	
 	  .dropdown-menu.closed-dropdown {

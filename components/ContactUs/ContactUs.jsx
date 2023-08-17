@@ -120,7 +120,7 @@ function ContactUs() {
                 <p className="form-message"></p>
                 <br />
                 <div id="contact-form" className="contact-form form">
-                  <div className="row">
+                  <div className="row row-container">
                     <div className="col-lg-6 col-md-6">
                       <div
                         className="form-group "

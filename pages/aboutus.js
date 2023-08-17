@@ -1,4 +1,3 @@
-// import OwlCarousel from 'react-owl-carousel';
 import {
   AboutCompany,
   OurCustomers,
@@ -6,17 +5,13 @@ import {
   School
 } from "@/components";
 
-
 function AboutUs() {
 
   return (
     <>
       <PageTitle title="About Us" />
       <AboutCompany />
-      {/* <Achievements /> */}
       <School />
-      {/* <ClientsSay /> */}
-      {/* <CooperationBlock /> */}
       <OurCustomers />
     </>
   );

@@ -10,7 +10,7 @@ const Modal = (props) => {
       >
         <div className="startup-modal__close">
           <i
-            className="fa fa-window-close"
+            className="fa fa-times"
             aria-hidden="true"
             style={{ fontSize: '30px' }}
             onClick={props.toggleModal}
@@ -33,20 +33,20 @@ export default function StartUp(props) {
     setOpened((prev) => !prev)
   }
 
-  useEffect(() => {
-    const closeModalOnOutsideClick = (event) => {
-      console.log(event);
-      if (opened && !event.target.closest(".startup-modal")) {
-        setOpened(false);
-      }
-    };
+  // useEffect(() => {
+  //   const closeModalOnOutsideClick = (event) => {
+  //     console.log(event);
+  //     if (opened && !event.target.closest(".startup-modal")) {
+  //       setOpened(false);
+  //     }
+  //   };
 
-    document.addEventListener("click", closeModalOnOutsideClick);
+  //   document.addEventListener("click", closeModalOnOutsideClick);
 
-    return () => {
-      document.removeEventListener("click", closeModalOnOutsideClick);
-    };
-  }, [opened]);
+  //   return () => {
+  //     document.removeEventListener("click", closeModalOnOutsideClick);
+  //   };
+  // }, [opened]);
 
   return (
     <div className="startups-container__block" onClick={toggleModal}>

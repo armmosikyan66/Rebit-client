@@ -133,7 +133,7 @@ function Services() {
         }
       }
     }
-  }, [asPath]);
+  }, );
 
   return (
     <>

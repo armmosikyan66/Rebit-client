@@ -472,7 +472,10 @@
 	}
 
 	.startups-container {
-		flex-direction: column;
+		/* width: 100%; */
+		padding: 0px 20px !important;
+		grid-template-columns: 1fr !important;
+		grid-template-rows: 180px !important;
 	}
 
 	.startups-container__block {

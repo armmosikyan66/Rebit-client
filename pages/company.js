@@ -62,6 +62,7 @@ const teamMembers = [
 
 function Company() {
   let router = useRouter();
+
   const asPath = router.asPath;
 
   useEffect(() => {
@@ -131,7 +132,7 @@ function Company() {
         }
       }
     }
-  }, );
+  },);
 
   return (
     <>

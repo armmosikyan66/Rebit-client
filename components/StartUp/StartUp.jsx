@@ -47,9 +47,16 @@ export default function StartUp(props) {
   //     document.removeEventListener("click", closeModalOnOutsideClick);
   //   };
   // }, [opened]);
+  console.log('====================================')
+  console.log(props, 'logoooooooo')
+  console.log('====================================')
 
   return (
-    <div className="startups-container__block" onClick={toggleModal}>
+    <div
+      className="startups-container__block"
+      onClick={toggleModal}
+      style={{ backgroundColor: props.title==='chingo' ? '#1F0158' : props.title==='socialbet' ?  '#478AD8' : 'transparent' }}
+    >
       <Image src={props.logo} alt="logo" />
       {opened && (
         <Modal

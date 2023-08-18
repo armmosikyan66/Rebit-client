@@ -4740,6 +4740,8 @@ blockquote::after,
   justify-content: center;
   align-items: center;
   margin: 0px 20px;
+  background-color: #1E0057;
+
 }
 
 .startups-container .startups-container__block:hover {

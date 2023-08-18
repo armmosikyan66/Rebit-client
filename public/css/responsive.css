@@ -470,6 +470,22 @@
 	.blog-details-desc .article-content .wp-block-gallery.columns-3 li:last-child {
 		margin-bottom: 0px;
 	}
+
+	.startups-container {
+		flex-direction: column;
+	}
+
+	.startups-container__block {
+		flex: 0 0 181px !important;
+	}
+
+	.startups-container__block img {
+		/* width: 261px !important;
+		height: 99px !important; */
+		width: 100% !important;
+		max-width: 261px !important;
+		height: auto !important;
+	}
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {

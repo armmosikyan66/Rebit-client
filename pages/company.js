@@ -1,13 +1,10 @@
 import { useEffect } from "react";
+import Image from "next/image";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { AboutCompany, PageTitle } from "@/components";
-
-
-import Image from "next/image";
 import imgs from "@/assets/img/choose-2.jpg";
 import Career from "@/assets/img/career.png";
-import axios from "axios";
 
 
 const teamMembers = [

@@ -5,6 +5,7 @@ export default function Document() {
         <Html lang="en">
             <Head>
                 <meta name='keywords' content="web development, mobile development, software development, ui/ux, devops, ai models, consulting" />
+                <link rel/>
                 <link rel="stylesheet" href="/css/bootstrap.min.css"/>
                 <link rel="stylesheet" href="/css/flaticon.css"/>
                 <link rel="stylesheet" href="/css/fontawesome.min.css"/>

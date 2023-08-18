@@ -4719,7 +4719,8 @@ blockquote::after,
 }
 
 .startups-container {
-  max-width: 1202px;
+  max-width: 1242px;
+  padding: 0px 20px;
   margin: 0 auto;
   display: flex;
   /* flex-wrap: wrap; */

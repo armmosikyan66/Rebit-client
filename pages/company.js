@@ -3,10 +3,12 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { AboutCompany, PageTitle } from "@/components";
 
+
 import Image from "next/image";
 import imgs from "@/assets/img/choose-2.jpg";
-import Career from "@/assets/img/career.png"
+import Career from "@/assets/img/career.png";
 import axios from "axios";
+
 
 const teamMembers = [
   {
@@ -68,7 +70,7 @@ function Company() {
       }
     })();
 
-  });
+  },);
 
   return (
     <>
@@ -79,7 +81,7 @@ function Company() {
       <PageTitle title={"Company"} />
       <AboutCompany />
 
-     
+
       <section className="team-area section-padding">
         <div className="container">
           <div className="row">
@@ -111,6 +113,7 @@ function Company() {
           </div>
         </div>
       </section>
+
 
       <section id="careersss" className="team-area section-padding">
         <div className="container">
@@ -144,6 +147,7 @@ function Company() {
           </div>
         </div>
       </section>
+
 
     </>
   );

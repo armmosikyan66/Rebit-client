@@ -88,23 +88,60 @@ function Services() {
   ];
 
   const StackSection = ({ id, title, description, image, index }) => (
-    <div id={id} className="stack-element">
-      <div
-        id="reverse"
-        className="content-wrapper"
-        style={{ flexDirection: index % 2 === 1 ? "row-reverse" : "" }}
-      >
-        <div className="text-block">
-          <div className="text-block__title" style={{ order: 2 }}>
-            <span>{title}</span>
+    // <div id={id} className="stack-element">
+    //   <div
+    //     id="reverse"
+    //     className="content-wrapper"
+    //     style={{ flexDirection: index % 2 === 1 ? "row-reverse" : "" }}
+    //   >
+    //     <div className="text-block">
+    //       <div className="text-block__title" style={{ order: 2 }}>
+    //         <span>{title}</span>
+    //       </div>
+    //       <p style={{ order: 1 }}>{description}</p>
+    //     </div>
+    //     <div className="image-block" style={{ order: 3 }}>
+    //       <Image src={image} alt="stacks" priority />
+    //     </div>
+    //   </div>
+    // </div>
+    <section className="stack-element" style={{ paddingBottom: 30 }}>
+      <div className="container">
+        <div className="row ">
+          <div className="col-sm-12">
+            <div className="section-title">
+              {/* <h6>What We Provide</h6> */}
+              <h2>{title}</h2>
+            </div>
           </div>
-          <p style={{ order: 1 }}>{description}</p>
         </div>
-        <div className="image-block" style={{ order: 3 }}>
-          <Image src={image} alt="stacks" priority />
+
+        <div
+          id="reverse"
+          className={`row align-items-center ${index % 2 === 1 ? "flex-row-reverse" : ""}`}
+        >
+          <div className="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-between">
+            <div className="about-content">
+              <div className="about-content-text">
+                <p>
+                  We invite everyone who is interested in the IT world to study and
+                  become part of our team, regardless of their age. Our experienced
+                  specialists will train you with all the necessary means so that you
+                  can enter the IT field. Join us to learn new things and become smart
+                  specialists and develop further
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-5 col-md-12 col-sm-12 d-flex justify-content-start">
+            <div className="about-image">
+              <Image src={image} alt="IT School" />
+            </div>
+          </div>
         </div>
+
       </div>
-    </div>
+    </section>
   );
 
   useEffect(() => {
@@ -133,7 +170,7 @@ function Services() {
         }
       }
     }
-  }, );
+  },);
 
   return (
     <>

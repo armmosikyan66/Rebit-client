@@ -197,7 +197,7 @@ function Company() {
                   <p>
                     Join us on this captivating expedition and be part of a community that values growth, fosters creativity, and celebrates your individuality. Together, we're not just embracing the future; we're crafting it.
                   </p>
-                  <p>Welcome to TechNexa – where careers are forged and dreams are realized.</p>
+                  <p>Welcome to Rebit – where careers are forged and dreams are realized.</p>
                 </div>
               </div>
             </div>

@@ -4791,8 +4791,8 @@ blockquote::after,
 }
 
 .startup-modal__container img {
-  width: 211.36px;
-  height: 80px;
+  /* width: 211.36px;
+  height: 80px; */
   margin-bottom: 50px;
 }
 

@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 
 const Modal = (props) => {
   return (
-    <div className="startup-modal" onClick={props.toggleModal}>
+    <div className="startup-modal" onClick={(e) => {
+      props.toggleModal()
+      e.stopPropagation()
+    }}>
       <div
         className="startup-modal__container"
         onClick={(e) => e.stopPropagation()}
@@ -27,34 +30,20 @@ const Modal = (props) => {
 }
 
 export default function StartUp(props) {
-  const [opened, setOpened] = useState(false)
+  const [opened, setOpened] = useState(false);
 
   const toggleModal = () => {
     setOpened((prev) => !prev)
+
   }
-
-  // useEffect(() => {
-  //   const closeModalOnOutsideClick = (event) => {
-  //     console.log(event);
-  //     if (opened && !event.target.closest(".startup-modal")) {
-  //       setOpened(false);
-  //     }
-  //   };
-
-  //   document.addEventListener("click", closeModalOnOutsideClick);
-
-  //   return () => {
-  //     document.removeEventListener("click", closeModalOnOutsideClick);
-  //   };
-  // }, [opened]);
-  console.log('====================================')
-  console.log(props, 'logoooooooo')
-  console.log('====================================')
 
   return (
     <div
       className="startups-container__block"
-      onClick={toggleModal}
+      onClick={() => {
+        toggleModal()
+        console.log('container-block')
+      }}
       style={{ backgroundColor: props.title==='chingo' ? '#1F0158' : props.title==='socialbet' ?  '#478AD8' : 'transparent' }}
     >
       <Image src={props.logo} alt="logo" />

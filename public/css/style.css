@@ -4765,7 +4765,7 @@ blockquote::after,
   height: 100vh;
   z-index: 1000;
   background-color: rgba(120, 120, 120, 0.5);
-  padding: 40px 0px;
+  /* padding: 40px 0px; */
   display: flex;
   justify-content: center;
   align-items: center;

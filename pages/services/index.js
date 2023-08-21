@@ -105,7 +105,7 @@ function Services() {
     //     </div>
     //   </div>
     // </div>
-    <section className="stack-element" style={{ paddingBottom: 30 }}>
+    <section className="stack-element" style={{ paddingBottom: 30 }} id={id}>
       <div className="container">
         <div className="row ">
           <div className="col-sm-12">
